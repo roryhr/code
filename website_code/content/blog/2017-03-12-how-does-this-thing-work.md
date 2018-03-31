@@ -2,6 +2,10 @@ Title:  How does this thing work?
 Date:   2017-03-12
 Category: python, documentation
 
+Edit: 3-31-2018
+
+Added a `requirements.txt` to capture dependencies. The big one is `Markdown`.
+
 # Introduction
 
 After 9 months I'm returning to this website.

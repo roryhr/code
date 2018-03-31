@@ -1,6 +1,6 @@
-title: Welcome
+title:
 save_as: index.html
 
-Thanks for stopping by my little website.
+Thanks for stopping by my website.
 
 -- Rory Hartong-Redden
