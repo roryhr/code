@@ -1,20 +1,23 @@
 Title: About
 
-Rory Hartong-Redden is a research data scientist working in Menlo Park at Allstate.
+Depending on who you ask, Rory Hartong-Redden is either a researcher, analyst, or data scientist at Allstate. He lives and works in Menlo Park, CA.
+
 
 # Long Bio
 
 Rory Hartong-Redden is a Researcher at Allstate working on an autonomous vehicle research project with Stanford.
 The project was described in a recent [press release](https://www.allstatenewsroom.com/news/allstate-announces-autonomous-vehicle-research-agreement/) and is off to a great start.
 
-The winter of 2015 he was a machine learning fellow at [Startup.ML](Startup.ML).
-There Rory worked in an agile team, built a data pipeline to ingest market data, and set up a platform to test trading algorithms.
+During the winter quarter of 2015 he was a machine learning fellow at [Startup.ML](Startup.ML) where he built a data pipeline to ingest market data and set up a platform to backtest trading algorithms.
 
-His master’s work built a new fluid dynamics experiment that measured fluid motion using a novel computer vision system.
-Similarly, Rory's bachelor’s work pioneered a measurement technique that collected data from splashes from two high-speed cameras.
-Lacking a theory to draw conclusions from the data he developed a new theory of patterns on circular domains.
+Rory earned a bachelors degree in Physics and Mechanical Engineering at UC Santa Barbara. 
+His undergraduate research studied the structure of splashed using stereo high-speed cameras.
+Rory completed a masters in Mechanical Engineering and continued to work in experimental fluid dynamics where he built a new fluid dynamics experiment that measured fluid motion using a novel computer vision system.
 
-He can be found on running paths around Stanford and at Meetup groups in the Bay Area discussing the latest advances in AI and Python.
+He can be found on running around Stanford, playing ping pong, and at Meetup groups in the Bay Area focusing on Python, data engineering, and data science.
+
+
+# Resume
 
 [Resume](https://github.com/roryhr/resume/raw/master/rhartong_redden_resume.pdf)
 
