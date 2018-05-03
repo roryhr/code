@@ -32,6 +32,7 @@ LINKS = (
     ('Google', 'http://googleresearch.blogspot.com/'),
     ('DeepMind', 'https://deepmind.com/blog'),
     ('MultiThreaded', 'http://multithreaded.stitchfix.com/'),
+    ('SISL', 'http://sisl.stanford.edu/'),
 )
 
 # Social widget
