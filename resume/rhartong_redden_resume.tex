@@ -21,12 +21,15 @@
 {\end{list}}
 
 % format two pieces of text, one left aligned and one right aligned
-\newcommand{\headerrow}[2]
-{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
-	#1 &
-	#2 \\
-\end{tabular*}}
+\newcommand{\headerrow}[2]{
+\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+		#1 &
+		#2 \\
+	\end{tabular*}
+}
 
+\newcommand{\jobitem}[4]{\item \headerrow{\textbf{#1}}{#2}
+\headerrow{\emph{#3}}{\emph{#4}}}
 
 \begin{document}
 
@@ -36,8 +39,9 @@
 \today \/ \textbar
 \/ Menlo Park, CA \textbar
 \/ roryhr@gmail.com \textbar
-\/ \href{roryhr.github.io}{roryhr.github.io} \textbar\/   
-\href{https://github.com/roryhr}{github.com/roryhr}\\}
+\/ roryhr.com \textbar\/   
+github.com/roryhr\\
+}
 \hrule
 
 \subsection*{Summary}
@@ -47,29 +51,27 @@ data scientist, data engineer, lapsed physicist\\
 
 \hrule
 \subsection*{Tools}
+%I use Python for everything from a small scripts that modify a couple of files on my local computer to a PySpark script that processes terabytes of data.
+%I'm open to other tech stacks -- this is just the one I know.
 \begin{indentsection}{\parindent}
-\begin{tabular}{p{0.5\linewidth}   p{0.5\linewidth} } 
-	\textbf{Languages:}  Python, SQL
-	& \textbf{ML:} Neural Networks, Gradient Boosted Machines \\
+\begin{tabular}{p{0.5\linewidth}   p{0.5\linewidth}} 
+	Python, SQL
+	& Machine Learning, Computer Vision, Deep Learning \\
 
-	\textbf{Data:} Spark, Postgres, Hadoop
-	& \textbf{Dev:}  Git, Bash \\  
+	Spark, Postgres, Hadoop, PostGIS, ArcMap 
+	& Jupyter Notebooks, Git, Bash \\ 
 	
-	\multicolumn{2}{l}{\textbf{Python Tools:} Pandas, matplotlib, NumPy, OpenCV, scikit-learn} \\
+	\multicolumn{2}{l}{
+		\textbf{Python Packages:} Pandas, matplotlib, NumPy, OpenCV, scikit-learn,
+							TensorFlow, requests, Flask} \\
 \end{tabular}
 \end{indentsection}
 
 \hrule
 \subsection*{Work}
 \begin{itemize}
-	\parskip=-0.1em
-	\item
-	\headerrow
-	{\textbf{Allstate}}
-	{Menlo Park, CA}
-	\headerrow
-	{\emph{Lead Research Analyst}}
-	{\emph{Jul 2015--Present}}
+	\jobitem{Allstate}{Menlo Park, CA}
+		     {Data Scientist}{Jul 2015--Present}
 	\begin{itemize*}
 		\item Support and guide research partnership with the Stanford Intelligent Systems Lab
 		\item Preparing datasets for other team members
@@ -78,30 +80,17 @@ data scientist, data engineer, lapsed physicist\\
 \end{itemize}
 
 \begin{itemize}
-	\parskip=-0.1em
-	\item
-	\headerrow
-		{\textbf{Startup.ML}}
-		{San Francisco, CA}
-	\headerrow
-		{\emph{Machine Learning Fellow}}
-		{\emph{Dec 2015--Apr 2016}}
+	\jobitem{Startup.ML}{San Francisco, CA}
+		    {Machine Learning Fellow}{Dec 2015--Apr 2016}
 	\begin{itemize*}
 		\item Developed a FinTech data pipeline for algorithmic currency trading using machine learning
 		\item Lead the integration of an open-source Python backtesting and trading platform
-		\item Research in Reinforcement Learning for autonomous trading
 	\end{itemize*}
 \end{itemize}
 
 \begin{itemize}
-	\parskip=-0.1em
-	\item
-	\headerrow
-		{\textbf{Harold Washington College}}
-		{Chicago, IL}
-	\headerrow
-		{\emph{Adjunct Faculty}}
-		{\emph{Feb 2015--May 2015}}
+	\jobitem{Harold Washington College}{Chicago, IL}
+		    {Adjunct Faculty}{Feb 2015--May 2015}
 	\begin{itemize*}
 		\item Presented complex concepts in Astronomy at the level of the general public
 	\end{itemize*}
@@ -111,78 +100,37 @@ data scientist, data engineer, lapsed physicist\\
 \hrule
 \subsection*{Projects}
 \begin{itemize}
-	\parskip=-0.1em
-	\item
-	\headerrow
-		{\textbf{Master's Thesis}}
-		{UC Santa Barbara}	\\
-	\headerrow
-		{\emph{Krechetnikov Fluid Physics Lab}}
-		{\emph{Dec 2013--Jun 2014}}
+	\jobitem{Master's Thesis}{UC Santa Barbara}
+		    {Krechetnikov Fluid Physics Lab}{Dec 2013--Jun 2014}
 	\begin{itemize*}
 		\item Incorporated a recent image processing technique for cheap 3D high speed mm-resolution measurement over a surface area of $225 \,\mathrm{cm}^2$ 		\href{https://github.com/roryhr/profilometry}{[profilometry repository]}
 	\end{itemize*}
 	
-	\item
-	\headerrow
-		{\textbf{Bachelor's Thesis: Drop Splash Experiment}}
-		{Santa Barbara, CA} \\
-	\headerrow
-		{\emph{Krechetnikov Fluid Physics Lab, Dept.~of Mechanical Engineering}}
-		{\emph{Jul 2009--Oct 2010}}
+	\jobitem{Bachelor's Thesis: Drop Splash Experiment}{Santa Barbara, CA}
+		    {Krechetnikov Fluid Physics Lab, Dept.~of Mechanical Engineering}{Jul 2009--Oct 2010}
 	\begin{itemize*}
-%		\item Investigated the physics of splashes that occur when a liquid droplet impacts a wetted surface
-% 		\item Performed stereo triangulation in MATLAB, reduced the  the 3D data, and searched for patterns using my theory of pattern identification 
-% 		\href{https://github.com/roryhr/drop_splash}{[drop\_splash repository]}
 		\item Published a peer-reviewed article on the experimental and theoretical advances I developed that may have solved a 100-year-old puzzle in fluid dynamics
 	\end{itemize*}
-	\item
-	\headerrow
-		{\textbf{Transient Optical Sky Survey}}
-		{UC Santa Barbara}	\\
-	\headerrow
-		{\emph{Lubin Lab, Dept.~of Physics}}
-		{\emph{Sep 2008--Jun 2009}}
+	\jobitem{Transient Optical Sky Survey}{UC Santa Barbara}
+		    {Lubin Lab, Dept.~of Physics}{Sep 2008--Jun 2009}
 	\begin{itemize*}
 		\item Image processing with a Matlab/C data pipeline that analyzed 1GB of images taken each night
 	\end{itemize*}
 \end{itemize}
 
-
 \hrule
 \subsection*{Education}
 \begin{itemize}
-	\parskip=-0.1em
-	\item 
-	\headerrow
-		{\textbf{University of California, Santa Barbara}}
-		{Santa Barbara, CA}
-	\headerrow
-		{\emph{MS  Mechanical Engineering}}
-		{\emph{Dec 2014}}
+	\jobitem{University of California, Santa Barbara}{Santa Barbara, CA}
+		    {MS  Mechanical Engineering}{Dec 2014}
+	\jobitem{Northwestern University}{Evanston, IL}
+		    {PhD Physics Candidate}{Sept 2010--Mar 2012}
+	\jobitem{University of California, Santa Barbara}{Santa Barbara, CA}	
+		    {BS Physics \&  BS Mechanical Engineering}{June 2010}
 %	\begin{itemize*}
-%%		\vspace{-0.2em}
-%		\item Thesis: {\em Experimental apparatus for the study of Faraday waves on time-varying domains}
-%	\end{itemize*}
-	\item 
-	\headerrow
-		{\textbf{Northwestern University}}
-		{Evanston, IL}
-	\headerrow
-		{\emph{PhD Physics Candidate}}
-		{\emph{Sept 2010--Mar 2012}}
-	\item 
-	\headerrow
-		{\textbf{University of California, Santa Barbara}}
-		{Santa Barbara, CA}	\\
-	\headerrow
-		{\emph{BS Physics \&  BS Mechanical Engineering}}
-		{\emph{June 2010}}
-	\begin{itemize*}
 %		\item  Thesis: {\em Experimental and theoretical study of pattern identification in physical systems with circular symmetry}
-		\item Graduated with honor in both degrees, Dean's list 11/12 quarters, GPA: 3.7/4.0
-		\item Member: Tau Beta Pi engineering honor society
-	\end{itemize*}
+%		\item Graduated with honor in both degrees, Dean's list 11/12 quarters, GPA: 3.7/4.0
+%		\item Member: Tau Beta Pi engineering honor society
+%	\end{itemize*}
 \end{itemize}
-
 \end{document}
