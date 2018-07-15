@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- #
 AUTHOR = 'Rory Hartong-Redden'
 SITENAME = "Rory's Corner"
 
@@ -25,15 +23,17 @@ TIMEZONE = 'America/Vancouver'
 DEFAULT_LANG = 'en'
 
 # Blogroll
-LINKS = (
+LINKS = [
+    ('BayPIGies', 'http://baypiggies.net/'),
+    ('Pyninsula', 'http://pyninsula.org/'),
+    ('SF Python', 'http://sfpythonmeetup.com/'),
     ('Keras', 'http://blog.keras.io/'),
     ('No Free Hunch (Kaggle)', 'http://blog.kaggle.com/'),
     ('EFAVDB', 'http://efavdb.com/'),
     ('Google', 'http://googleresearch.blogspot.com/'),
-    ('DeepMind', 'https://deepmind.com/blog'),
     ('MultiThreaded', 'http://multithreaded.stitchfix.com/'),
     ('SISL', 'http://sisl.stanford.edu/'),
-)
+]
 
 # Social widget
 SOCIAL = (
