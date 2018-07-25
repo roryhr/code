@@ -11,14 +11,6 @@
 }
 {\end{list}}
 
-% opposite of above; bump a section back toward the left margin
-\newenvironment{unindentsection}[1]
-{\begin{list}{}%
-	{\setlength{\leftmargin}{-0.5#1}}
-	\item[]%
-}
-{\end{list}}
-
 % format two pieces of text, one left aligned and one right aligned
 \newcommand{\headerrow}[2]{
 \begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}

@@ -1,6 +1,5 @@
 \documentclass[10pt,letterpaper]{article}
 \usepackage[letterpaper, margin=1.0in,  bottom=.8in]{geometry}
-\usepackage[pdfborder={0 0 0}]{hyperref}
 \usepackage{mdwlist}
 \pagestyle{empty}
 \setlength{\tabcolsep}{0em}
@@ -12,20 +11,15 @@
 }
 {\end{list}}
 
-% opposite of above; bump a section back toward the left margin
-\newenvironment{unindentsection}[1]%
-{\begin{list}{}%
-	{\setlength{\leftmargin}{-0.5#1}}%
-	\item[]%
-}
-{\end{list}}
-
 % format two pieces of text, one left aligned and one right aligned
 \newcommand{\headerrow}[2]
 {\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
 	#1 &
 	#2 \\
 \end{tabular*}}
+
+\newcommand{\jobitem}[4]{\item \headerrow{\textbf{#1}}{#2}
+\headerrow{\emph{#3}}{\emph{#4}}}
 
 
 \begin{document}
@@ -38,36 +32,24 @@
 Rory E. Hartong-Redden \\
 Menlo Park, CA   \\
 roryhr@gmail.com \\
-\href{roryhr.github.io}{roryhr.github.io} \\
-\href{https://github.com/roryhr}{github.com/roryhr}
+roryhr.com \\
+github.com/roryhr
 \end{indentsection}
 
 \hrule
 \subsection*{Education}
 \begin{itemize}
-	\parskip=-0.1em
-	\item 
-	\headerrow
-		{\textbf{University of California, Santa Barbara}}
-		{Santa Barbara, CA}
-	\headerrow
-		{\emph{MS  Mechanical Engineering}}
-		{\emph{Dec 2014}}
+	\jobitem{University of California, Santa Barbara}	{Santa Barbara, CA}
+			{MS  Mechanical Engineering}				{Dec 2014}
 	\begin{itemize*}
 		\item Thesis: {\em Experimental apparatus for the study of Faraday waves on time-varying domains}
 	\end{itemize*}
-	\item 
-	\headerrow
-		{\textbf{Northwestern University}}{Evanston, IL}
-	\headerrow
-		{\emph{Physics PhD Candidate}}{\emph{Sep 2010--Mar 2012}}
-	\item 
-	\headerrow
-		{\textbf{University of California, Santa Barbara}}
-		{Santa Barbara, CA}	\\
-	\headerrow
-		{\emph{BS Physics \&  BS Mechanical Engineering}}
-		{\emph{Jun 2010}}
+	\jobitem{Northwestern University}					{Evanston, IL}
+			{Physics PhD Candidate}						{Sep 2010--Mar 2012}
+	\jobitem{University of California, Santa Barbara}	{Santa Barbara, CA}	
+			{BS Mechanical Engineering} 				{Jun 2010}
+	\jobitem{University of California, Santa Barbara}	{Santa Barbara, CA}	
+			{BS Physics} 								{Jun 2010}
 	\begin{itemize*}
 		\item  Thesis: {\em Experimental and theoretical study of pattern identification in physical systems with circular symmetry}
 	\end{itemize*}
@@ -97,14 +79,8 @@ roryhr@gmail.com \\
 \hrule
 \subsection*{Work Experience}
 \begin{itemize}
-	\parskip=-0.1em
-	\item
-	\headerrow
-		{\textbf{Allstate}}
-		{Menlo Park, CA}
-	\headerrow
-		{\emph{Research Analyst}}
-		{\emph{Dec 2016--Present}}
+	\jobitem{Allstate}			{Menlo Park, CA}
+		    {Data Scientist}	{Jul 2016--Present}
 	\begin{itemize*}
 		\item Guide and support ongoing partnership with the Stanford Intelligent Systems Laboratory 
 		\item Prepare internal datasets for business analysts
@@ -113,14 +89,8 @@ roryhr@gmail.com \\
 \end{itemize}
 
 \begin{itemize}
-	\parskip=-0.1em
-	\item
-	\headerrow
-		{\textbf{Startup.ML}}
-		{San Francisco, CA}
-	\headerrow
-		{\emph{Machine Learning Fellow}}
-		{\emph{Dec 2015--Apr 2016}}
+	\jobitem{Startup.ML}				{San Francisco, CA}
+		    {Machine Learning Fellow}	{Dec 2015--Apr 2016}
 	\begin{itemize*}
 		\item Developed a production FinTech data pipeline for currency trading using industry-standard machine learning methods
 		\item Investigating how Reinforcement Learning can be leveraged for improved algorithmic trading
@@ -128,38 +98,22 @@ roryhr@gmail.com \\
 \end{itemize}
 
 \begin{itemize}
-	\parskip=-0.1em
-	\item
-	\headerrow
-		{\textbf{Harold Washington College}}
-		{Chicago, IL}
-	\headerrow
-		{\emph{Adjunct Faculty}}
-		{\emph{Feb 2015--May 2015}}
+	\jobitem{Harold Washington College}	{Chicago, IL}
+		    {Adjunct Faculty}			{Feb 2015--May 2015}
 	\begin{itemize*}
 		\item Gave 2 lectures a week  for a descriptive astronomy course 
 		\item Incorporated the latest discoveries in astronomy and the new \emph{Cosmos} into my lessons
 		\item Presented topics in Astrophysics and Cosmology at the level of the general public and explained concepts without relying on mathematical or scientific constructs
 	\end{itemize*}
 	
-	\item
-	\headerrow
-		{\textbf{University of California, Santa Barbara}}
-		{Santa Barbara, CA} \\
-	\headerrow
-		{\emph{Teaching Assistant }}
-		{\emph{Dec 2012--Jun 2014}}
+	\jobitem{University of California, Santa Barbara}	{Santa Barbara, CA} 
+			{Teaching Assistant}						{Dec 2012--Jun 2014}
 	\begin{itemize*}
 		\item Introduced machining concepts on the mill and lathe to students in the engineering machine shop
 		\item Supervised students as they built parts for the class project with zero accidents
 	\end{itemize*}
-	\item
-	\headerrow
-		{\textbf{Northwestern University}}
-		{Evanston, IL}\\
-	\headerrow
-		{\emph{Teaching Assistant}}
-		{\emph{Sept 2010--Mar 2012}}
+	\jobitem{Northwestern University}	{Evanston, IL}
+			{Teaching Assistant}		{Sept 2010--Mar 2012}
 	\begin{itemize*}
 		\item Prepared  quizzes and held office hours to answer questions one-on-one for introductory physics 
 	\end{itemize*}
@@ -172,87 +126,50 @@ roryhr@gmail.com \\
 	\parskip=-0.1em
 	\item
 	\headerrow
-		{\textbf{Kaggle}}{\emph{May 2015--Present}}
+		{\textbf{Kaggle}}{\emph{May 2015--Jul 2016}}
 	\begin{itemize*}
 		\item Coded a deep residual convolution network in Keras/TensorFlow for multi-label classification for the Yelp Kaggle competition
-		\href{https://github.com/roryhr/yelp_kaggle}{[yelp\_kaggle repository]}
 	\end{itemize*}
-	
-	\item
-	\headerrow
-		{\textbf{Software Development}}{\emph{May 2015--Present}}
-	\begin{itemize*}
-		\item Currently working through \emph{Bayesian Methods for Hackers}
-		\item Learned object-oriented programming and wrote code using OO principles
-		\item Deployed a Twitter clone in Rails on Heroku by following the \emph{Ruby on Rails Tutorial} 
-	\end{itemize*}	
 
 		
-	\item
-	\headerrow
-		{\textbf{Master's Thesis: Faraday Waves}}
-		{Santa Barbara, CA}	\\
-	\headerrow
-		{\emph{Krechetnikov Fluid Physics Lab}}
-		{\emph{Dec 2013--Jun 2014}}
+	\jobitem{Master's Thesis: Faraday Waves}	{Santa Barbara, CA}
+			{Krechetnikov Fluid Physics Lab}	{Dec 2013--Jun 2014}
 	\begin{itemize*}
 		\item Designed and built a new experiment to study the surface patterns of vibrating containers of water (Faraday waves)
-		\item Incorporated a recent image processing technique for cheap 3D high speed mm-resolution measurement over a surface area of $225 \,\mathrm{cm}^2$ 		\href{https://github.com/roryhr/profilometry}{[profilometry repository]}
+		\item Incorporated a recent image processing technique for cheap 3D high speed mm-resolution measurement over a surface area of $225 \,\mathrm{cm}^2$ 
 		\item Sourced \$20k in  lab equipment including a Labworks 75lb shaker, 2 accelerometers, and 2 Parker actuators all interfacing with a NI PCIe DAQ and LabVIEW VI running on a dedicated computer
 		\item Designed a bespoke experimental apparatus using SolidWorks to study Faraday Waves  and produced a  set of engineering drawings, validation tests, and documentation as part of my thesis
 		\item Personally fabricated a prototype in the college machine shop and had the final design parts CNC  machined 
 	\end{itemize*}
 		
-	\item
-	\headerrow
-		{\textbf{X-Ray Microscopy}}
-		{Argonne National Lab}	\\
-	\headerrow
-		{\emph{Bionanoprobe, Advanced Photon Source, Sector 21}}
-		{\emph{Nov 2011}}
+	\jobitem{X-Ray Microscopy}									{Argonne National Lab}
+			{Bionanoprobe, Advanced Photon Source, Sector 21}	{Nov 2011}
 		\begin{itemize*}
 			\item Measured the thermal drift of the optics stage of the BioNanoProbe using simple image correlation with Matlab
 		\end{itemize*}
-		
-	\item
-	\headerrow
-		{\textbf{Arctic Sea Ice Modeling}}
-		{Northwestern University}	\\
-	\headerrow
-		{\emph{Prof.~Mary Silber, Dept.~of Applied Mathematics}}
-		{\emph{Sep 2011--Jan 2012}}
+
+	\jobitem{Arctic Sea Ice Modeling}							{Northwestern University}
+			{Prof.~Mary Silber, Dept.~of Applied Mathematics}	{Sep 2011--Jan 2012}
 	\begin{itemize*}
 		\item Derived from first principles and coded arctic sea ice models in Matlab for the study of climate change
 	\end{itemize*}
-	
-	\item
-	\headerrow
-		{\textbf{Programmable Flow Generator}}{Goleta, CA} \\
-	\headerrow
-		{\emph{LaunchPoint Technologies}}{\emph{Sep 2009--Jun 2010}}
+
+	\jobitem{Programmable Flow Generator}	{Goleta, CA}
+			{LaunchPoint Technologies}		{Sep 2009--Jun 2010}
 	\begin{itemize*}
 		\item Contributed modeling expertise on team of fellow engineering students   working on a  fluidic loop 
 	\end{itemize*}
 	
-	\item
-	\headerrow
-		{\textbf{Bachelor's Thesis: Drop Splash Experiment}}
-		{Santa Barbara, CA} \\
-	\headerrow
-		{\emph{Krechetnikov Fluid Physics Lab, Dept.~of Mechanical Engineering}}
-		{\emph{Jul 2009--Oct 2010}}
+	\jobitem{Bachelor's Thesis: Drop Splash Experiment}{Santa Barbara, CA}
+			{Krechetnikov Fluid Physics Lab, Dept.~of Mechanical Engineering}{Jul 2009--Oct 2010}
 	\begin{itemize*}
 		\item Investigated the physics of splashes that occur when a liquid droplet impacts a wetted surface
  		\item Performed stereo triangulation in MATLAB, reduced the  the 3D data, and searched for patterns using my theory of pattern identification 
- 		\href{https://github.com/roryhr/drop_splash}{[drop\_splash repository]}
 		\item Published a peer-reviewed article$^3$ on the experimental and theoretical advances I developed that may have solved a 100-year puzzle in fluid dynamics
 	\end{itemize*}
 		
-	\item
-	\headerrow
-		{\textbf{Transient Optical Sky Survey}}{Santa Barbara, CA}	\\
-	\headerrow
-		{\emph{Lubin Lab, Dept.~of Physics}}{\emph{Sep 2008--Jun 2009}}
+	\jobitem{Transient Optical Sky Survey}	{Santa Barbara, CA}
+			{Lubin Lab, Dept.~of Physics}	{Sep 2008--Jun 2009}
 	\begin{itemize*}
 		\item Collaborated on the MATLAB/C data pipeline that processed 1GB of images per night
 	\end{itemize*}
