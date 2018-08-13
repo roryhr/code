@@ -47,7 +47,7 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-PLUGINS = ['render_math']
+# PLUGINS = ['render_math']
 
 # Turn off Feed generation
 FEED_ALL_ATOM = None
