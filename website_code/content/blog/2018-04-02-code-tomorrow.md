@@ -1,6 +1,6 @@
 Title:  Code for Tomorrow
 Date:   2018-04-02
-Category: python, miniessays
+Tags: python, miniessays
 
 This is the first of a series of short articles.
 

@@ -1,6 +1,6 @@
 Title:  Running Quickstart
 Date:   2018-07-14
-Category: running, miniessays
+Tags: running, miniessays
 
 This is the second in a series of short articles.
 

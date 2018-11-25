@@ -1,6 +1,7 @@
 Title:  Python Environments
 Date:   2018-08-13
-Category: python, miniessays
+Category: Python
+Tags: python, miniessays
 
 1. Why should I care about environments?
 2. How do I manage environments? 

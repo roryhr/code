@@ -1,6 +1,7 @@
 Title: PyCon Talks
 Date: 2016-03-20
-Category: open source, pycon, python, links
+Category: Python
+Tags: open source, pycon, python, links
 
 There are tons of great PyCon talks on YouTube and I haven't even scratched the surface
 of what's out there but here are a few that struck me.

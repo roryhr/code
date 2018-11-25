@@ -1,4 +1,4 @@
-title: Projects
+Title: Projects
 
 As I write more posts about what I'm working on (or finished, let's say) I'll
 link to them here.
