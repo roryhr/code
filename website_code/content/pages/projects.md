@@ -5,13 +5,21 @@ link to them here.
 
 # Current 
 
+# Clickbait Bot
+
+I'm having trouble posting content regularly so I built a bot to do it for me. 
+
+
 # Running Analysis 
 
-I run 35 miles a week and log those miles on [Stava](https://www.strava.com/athletes/23193264). 
+I run around 50 miles a week and log those miles on [Strava](https://www.strava.com/athletes/23193264). 
 Sometimes I want to analyze a workout so I made a simple web application on Heroku.
 It's a Flask app that makes a couple of Strava API calls and renders some plots but there's gold in them thar plots!
 
 [running analytics repo](https://github.com/roryhr/running_analytics)
+
+
+# Retired
 
 ## cookiecutter-pyspark
 
@@ -24,9 +32,6 @@ I didn't see a PySpark template so I made one.
 ## Self-driving RC car
 
 I want to build a self-driving car and compete here [DIY Robocars](https://diyrobocars.com/). How hard can it be?
-
-
-# Retired
 
 ## tune2vec
 

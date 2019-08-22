@@ -1,7 +1,8 @@
 Title: About
 
-Rory Hartong-Redden is Data Engineer/Data Scientist. My tools of choice are Python and PySpark.
-I work at Runtastic in Linz, Austria (acquired by Adidas).
+Rory Hartong-Redden is Data Engineer/Data Scientist.
+My tools of choice are Python and Spark followed by SQL and Bash.
+I work at Runtastic in Linz, Austria (acquired by adidas).
 
 # Long Bio
 
