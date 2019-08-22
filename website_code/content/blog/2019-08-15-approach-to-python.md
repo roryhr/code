@@ -1,12 +1,12 @@
-Title: Coding Approach
-Date: 2019-07-15
+Title: Approach to Python
+Date: 2019-08-15
 Category: Python
 Tags: python
 
 Note:
 
 I like to phrase things as punchy commands but it's all just my preference.
-I don't care too much about style and it's constantly evolving.
+My personal style is constantly evolving.
 
 My motto is a twist on the Zen of Python
 ```
@@ -16,7 +16,7 @@ If the implementation is easy to understand, it may be good.
 
 # Style Guide
 
-List comprehensions are your bread and butter. Structre them like a SQL query.
+List comprehensions are your bread and butter. Structure them like a SQL query.
 ```python
 cleaned_emails = [
     email.strip()
@@ -55,13 +55,50 @@ Naming things is hard. Do it well!
 Conserve your colleagues' brainpower: if a function has a good name and docstring then they don't have to understand *how it works* to understand *what it does*. 
 
 
+Use SQL where possible, it's more readable than the PySpark equivalent.
+```python
+user_df = spark.sql("""
+SELECT id,
+       created_at,
+       dt AS partition
+  FROM users
+ WHERE updated_at IS NOT NULL
+""")
+```
+
+Distinguish between Spark DataFrames and Pandas DataFrames when mixing the two. 
+```python
+user_pdf = user_df.toPandas()
+```
+
+Other Spark preferences:
+Distinguish between Spark DataFrames and Pandas DataFrames when mixing the two.
+```python
+import pyspark
+import pyspark.sql.types as T 
+import pyspark.sql.functions as F
+```
+
+As the [documentation](http://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.SparkSession) says, the preferred entry point for Spark is through `spark`.
+```python
+# Yes
+df = spark.read.parquet()
+rdd = spark.sparkContext.sequenceFile()
+df = spark.sql("""SELECT * FROM users""")
+# No
+df = sc.read.parquet()
+sparkContext
+df = sqlContext.sql("""SELECT * FROM users""")
+df = hiveContext.sql("""SELECT * FROM users""")
+```
+
 # Writing Scripts
 
 Start with functions.
 If you find yourself passing several parameters between functions then make a class.
 
 
-Let's say you have a pyspark script called `anonymize_emails.py` which needs a date and which database to use. 
+Let's say you have a PySpark script called `anonymize_emails.py` which needs a date and a database. 
 ```python
 import sys
 import pyspark
@@ -76,22 +113,14 @@ if __name__ == '__main__':
     anonymize_emails(spark, database, date)
 ```
 
-
-The the alternative to tuple unpacking is common but I wouldn't encourage it.
-First it silently ignores any extra parameters passed to the script -- having the script raise an error is a feature.  
-```
-database = sys.argv[1]
-date = sys.argv[2]
-```
-
-However you can explicitly ignore extra parameters if you wish.
+Explicitly ignore extra parameters if you want.
 ```
 _, database, date, *_ = sys.argv
 
 ```
 
-I'm not a huge fan of the trailing backslash for new lines but it's common in Spark code and growing on me. 
-For Pandas I still prefer to use parantheses. 
+I'm not a huge fan of the trailing backslash for new lines but it's common in Spark and growing on me. 
+For Pandas I still prefer to use parentheses. 
 In any case put each operation on new line. 
 ```python
 (df[['user_id', 'time_on_page']]
@@ -102,7 +131,7 @@ In any case put each operation on new line.
 ```
 
 Jupyter Notebooks are your friend. 
-Especially for data science you'll want to iterate: seeing what's actually in the data, check the processing did what you think it did, and see how long each chunk of code takes to run. 
+Especially for data science you'll want to iterate: see what's in the data, check the processing did what you think it did, and see how long each chunk of code takes to run. 
 Super helpful for development! 
 What's a natural chunk of code?
 A function, of course. 
