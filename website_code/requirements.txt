@@ -57,5 +57,5 @@ traitlets==4.3.2
 typogrify==2.0.7
 Unidecode==1.0.22
 wcwidth==0.1.7
-Werkzeug==0.12.2
+Werkzeug==0.15.3
 widgetsnbextension==3.0.2
