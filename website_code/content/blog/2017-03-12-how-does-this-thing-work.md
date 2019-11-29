@@ -2,9 +2,9 @@ Title:  How does this thing work?
 Date:   2017-03-12
 Category: python, documentation
 
-Edit: 3-31-2018
+Updated: 2019-11-29
 
-Added a `requirements.txt` to capture dependencies. The big one is `Markdown`.
+Added a `requirements.txt` to capture dependencies and ported to MacOS. 
 
 # Introduction
 
@@ -20,14 +20,17 @@ This post is for myself and anyone interested in using Pelican to make a Github-
 
 ## High level overview
 
-This site is hosted for free by [Github](https://github.com/). Thanks Github! The html "code" is a special repository [roryhr/roryhr.github.io](https://github.com/roryhr/roryhr.github.io).
+This site is hosted for free by [Github](https://github.com/) from the special repository [roryhr/roryhr.github.io](https://github.com/roryhr/roryhr.github.io). 
+Thanks Github!
 
-Great. I used a static site generator called Pelican that generates html, which comprises this website, from a series markdown text files in a particular directory structure (more on that in a bit).
+Great. 
+I used a static site generator called Pelican that generates html, which comprises this website, from markdown text files in a particular directory structure (more on that in a bit).
 These files are in a separate repository at
 [roryhr/site-code](https://github.com/roryhr/site-code).
 
 ## Recipes
 
+Content for the website goes in the `content` directory. 
 Generate the website
 
 	:::bash
@@ -36,8 +39,7 @@ Generate the website
 	Done: Processed 7 articles, 0 drafts, 4 pages and 0 hidden pages in 0.23 seconds.
 	((blog)) rory@rory-Satellite-S75-B:~/Projects/site-code$
 
-
-Shell showing the output folder is a Git repo pointing to `roryhr/roryhr.github.io`
+The output html goes to the `output` directory which gets pushed to `roryhr.github.io` repo.
 
 	:::bash
 	((blog)) rory@rory-Satellite-S75-B:~/Projects/site-code/output$ git status
@@ -69,10 +71,12 @@ Run the development server manually and navigate to `http://localhost:8000`
 	((blog)) rory@rory-Satellite-S75-B:~/Projects/site-code$ cd output/
 	((blog)) rory@rory-Satellite-S75-B:~/Projects/site-code/output$ python -m pelican.server
 
-Alternatively, take advantage of the shell script that automagically recompiles the site as you edit it (very cool!)
+Alternatively, take advantage of the shell script that recompiles the site as you edit it (very cool!)
 
-	:::bash
-	((blog)) rory@rory-Satellite-S75-B:~/Projects/site-code$ ./develop_server.sh start
+```bash
+(web) Rorys-MBP:website_code rory$ ./develop_server.sh start
+(web) Rorys-MBP:website_code rory$ ./develop_server.sh stop
+```
 
 # Repository contents
 
