@@ -3,12 +3,14 @@ Title: Projects
 As I write more posts about what I'm working on (or finished, let's say) I'll
 link to them here.
 
-# Current 
+# How Much Wes Anderson?
 
-# Clickbait Bot
+Have you spent hours scrolling through [@accidentallywesanderson](https://www.instagram.com/accidentallywesanderson/) on Instagram? 
+Do you think his unique aesthetic can quantified? 
+Well, yes, I did it!
+Upload an image and check it out.
 
-I'm having trouble posting content regularly so I built a bot to do it for me. 
-
+[How Much Wes?](https://how-much-wes.herokuapp.com/)
 
 # Running Analysis 
 
