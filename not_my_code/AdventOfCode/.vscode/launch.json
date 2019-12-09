@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Y2K19_1",
+            "request": "launch",
+            "mainClass": "com.mossman.darren.adventofcode.Y2K19.Y2K19_1"
+        }
+    ]
+}
