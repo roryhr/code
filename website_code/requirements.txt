@@ -9,7 +9,7 @@ Django==1.10.5
 docutils==0.14
 entrypoints==0.2.3
 feedgenerator==1.9
-Flask==0.12.2
+Flask==1.0
 gunicorn==19.1.0
 html5lib==0.999
 ipykernel==4.6.1
