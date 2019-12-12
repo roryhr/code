@@ -72,9 +72,6 @@ target/
 # pyenv
 .python-version
 
-# celery beat schedule file
-celerybeat-schedule
-
 # secrets
 *secret*
 
@@ -85,3 +82,4 @@ celerybeat-schedule
 .ropeproject
 
 .DS_Store
+.vscode

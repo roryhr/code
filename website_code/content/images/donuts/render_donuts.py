@@ -1,9 +1,16 @@
+"""Reder donuts_template.html using data from Facebook.
+
+Loads photo album metadata and links to images. Renders
+donut_template.html using Jinja2. 
+
+"""
 import json
+import os
 from jinja2 import Template
 from datetime import datetime
 from pathlib import Path
 
-with open('/Users/rory/data/facebook-3629808/photos_and_videos/album/0.json') as f:      
+with open('/Users/rory/data/facebook-3629808 (1)/photos_and_videos/album/4.json') as f:      
     album = json.load(f)
 
 # JSON for donut_data.js
@@ -31,14 +38,16 @@ for photo in album['photos']:
     }
     result.append(x)
 
+with open('donut_map.json', 'w') as f:
+    json.dump(result, f)
 # print(json.dumps(result))
 
 
-# For Jinja2
-
-p = Path('/Users/rory/public_code/website_code/content/images/Donutselfies_10103384416189657/')
+# Link file name to relative path images/donuts/Donutselfies_bMxPRLTyVg/
+donut_selfies_path = '/Users/rory/public_code/website_code/content/images/donuts/Donutselfies_bMxPRLTyVg'
+p = Path(donut_selfies_path)
 image_paths = {
-    path.name: path.absolute()
+    path.name: os.path.join('images/donuts/Donutselfies_bMxPRLTyVg', path.name)
     for path
     in p.glob('*.jpg')
 }
@@ -46,25 +55,25 @@ image_paths = {
 donuts = []
 for photo in album['photos']:
     p = Path(photo['uri'])
-
+    dt = datetime.fromtimestamp(photo['creation_timestamp'])
     x = {                                                
         'title': photo['description'].split('\n')[0],
         'text': photo['description'],
-        'created_at': str(datetime.fromtimestamp(photo['creation_timestamp'])),
+        'created_at': dt.strftime('%Y-%m-%d'),
         'url': image_paths.get(p.name),
+        'creation_timestamp': photo['creation_timestamp']
     }
-
     donuts.append(x)
+    
+print(donuts[0])
 
-
-
-template_file = '/Users/rory/public_code/website_code/content/images/donut_template.html'
-
+template_file = '/Users/rory/public_code/website_code/content/images/donuts/donuts_template.html'
 with open(template_file) as f:
     text = f.read()
 
+sorted_donuts =  sorted(donuts, key=lambda x: x['creation_timestamp'], reverse=True)
 template = Template(text)
-html_text = template.render(donuts=donuts)
+html_text = template.render(donuts=sorted_donuts)
 
 with open('donuts.html', 'w') as f:
     f.write(html_text)

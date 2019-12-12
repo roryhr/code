@@ -5,6 +5,8 @@ SITEURL = 'http://roryhr.com'
 
 INDEX_SAVE_AS = 'articles.html'
 
+# TEMPLATE_PAGES = {'images/donuts.html': '/pages/donuts.html'}
+
 DISPLAY_PAGES_ON_MENU = False
 DISPLAY_CATEGORIES_ON_MENU = False
 
@@ -14,7 +16,8 @@ MENUITEMS = [
     ('Archives', '/archives'),
     ('About', '/pages/about'),
     ('Projects', '/pages/projects'),
-    ('Contact', '/pages/contact')
+    ('Contact', '/pages/contact'),
+    ('Donuts', '/pages/donuts'),
 ]
 
 PATH = 'content'
