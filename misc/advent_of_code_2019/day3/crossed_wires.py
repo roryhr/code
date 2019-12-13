@@ -68,14 +68,15 @@ def process_instructions(instructions):
 
     return wire
 
-
-
-def closest_intersection(instructions1, instructions2):
+def intersections(instructions1, instructions2):
     wire1 = process_instructions(instructions1)
     wire2 = process_instructions(instructions2)
 
     intersections = (set(wire1) - {(0,0)}).intersection(set(wire2))
+    return intersections
 
+
+def closest_intersection(intersections):
     distances = [
         abs(intersecion[0]) + abs(intersecion[1])
         for intersecion
@@ -90,7 +91,7 @@ with open('input.txt') as f:
 instructions1, instructions2 = text.strip().split('\n')
 instructions1, instructions2 = instructions1.split(','), instructions2.split(',')
 
-print(closest_intersection(instructions1, instructions2))
+print(closest_intersection(intersections(instructions1, instructions2)))
 
 
 
@@ -178,3 +179,20 @@ print(closest_intersection(instructions1, instructions2))
  
 
 # You can also [Share] this puzzle.
+
+
+intersecs = intersections(instructions1, instructions2)
+
+wire1 = process_instructions(instructions1)
+wire2 = process_instructions(instructions2)
+steps1 = dict(enumerate(wire1))
+steps2 = dict(enumerate(wire2))
+
+total = []
+for intersec in intersecs:
+    dist1 = min([x for x, y in steps1.items() if y == intersec])
+    dist2 = min([x for x, y in steps2.items() if y == intersec])
+
+    total.append(dist1 + dist2)
+
+print(min(total))
