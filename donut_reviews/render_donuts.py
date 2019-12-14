@@ -12,11 +12,12 @@ from pathlib import Path
 import pandas as pd
 
 
-def leaflet_json(points_df):
+def leaflet_json(points_df, output_file='output/map_data.json'):
     """Generate GeoJSON object to render with Leaflet.js
     
     Needs latitude, longitude, and title for each marker.
     """
+    points_df = points_df.dropna(subset=['longitude', 'latitude'])
     point_list = []
     for point in points_df.itertuples():
         x = {
@@ -36,7 +37,9 @@ def leaflet_json(points_df):
         'type': 'FeatureCollection',
         'features': point_list
     }
-    return result
+    
+    with open(output_file, 'w') as f:
+        json.dump(result, f)
 
 
 # Link file name to relative path images/donuts/Donutselfies_bMxPRLTyVg/
@@ -85,17 +88,10 @@ def render_template(photos_df, output_file='output/donuts.html'):
         f.write(html_text)
 
 
-def render_leaflet_json(df, output_file='output/map_data.json'):
-    data = leaflet_json(df.fillna('empty data field'))
-
-    with open(output_file, 'w') as f:
-        json.dump(data, f)
-    
-
 def main():
     df = pd.read_csv('donut_album.csv')
 
-    render_leaflet_json(df)
+    leaflet_json(df.copy())
     render_template(df)
 
 

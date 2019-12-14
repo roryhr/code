@@ -1,14 +1,21 @@
 // Link to data on Github??
 // donutShop = $.getJSON("donut_data.json")
 // Link to data on Github??
-// var xmlhttp = new XMLHttpRequest();
-// xmlhttp.onreadystatechange = function() {
-//   if (this.readyState == 4 && this.status == 200) {
-//     var donutShop = JSON.parse(this.responseText);
-// };
+
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var donutShop = JSON.parse(this.responseText);
+
+        L.geoJSON(donutShop, {
+            onEachFeature: onEachFeature
+        }).addTo(map);
+    }
+};
 
 
-var map = L.map('map').setView([37.28099, -121.95252], 8);
+var map = L.map('map').setView([37.28099, -121.95252], 7);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
@@ -25,6 +32,5 @@ function onEachFeature(feature, layer) {
     }
 }
 
-L.geoJSON(donutShop, {
-    onEachFeature: onEachFeature
-}).addTo(map);
+xmlhttp.open("GET", url="https://raw.githubusercontent.com/roryhr/code/master/donut_reviews/output/map_data.json", async=true);
+xmlhttp.send();
