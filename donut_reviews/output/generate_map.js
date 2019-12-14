@@ -1,8 +1,14 @@
 // Link to data on Github??
 // donutShop = $.getJSON("donut_data.json")
+// Link to data on Github??
+// var xmlhttp = new XMLHttpRequest();
+// xmlhttp.onreadystatechange = function() {
+//   if (this.readyState == 4 && this.status == 200) {
+//     var donutShop = JSON.parse(this.responseText);
+// };
 
 
-var map = L.map('map').setView([37.28099, -121.95252], 9);
+var map = L.map('map').setView([37.28099, -121.95252], 8);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     maxZoom: 18,
@@ -17,24 +23,6 @@ function onEachFeature(feature, layer) {
     if (feature.properties && feature.properties.popupContent) {
         layer.bindPopup(feature.properties.popupContent);
     }
-
-    var numberList = document.getElementById("listings");
-
-    var newNumberListItem = document.createElement("li");
-
-    // //create new text node
-    var numberListValue = document.createTextNode(feature.properties.popupContent);
-
-    //add text node to li element
-    newNumberListItem.appendChild(numberListValue);
-
-    //add new list element built in previous steps to unordered list
-    //called numberList
-    numberList.appendChild(newNumberListItem);
-    
-    // var theDiv = document.getElementById("listings");
-    // var content = document.createTextNode(feature.properties.popupContent);
-    // theDiv.appendChild(content);
 }
 
 L.geoJSON(donutShop, {
