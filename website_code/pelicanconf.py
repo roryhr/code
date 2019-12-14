@@ -17,7 +17,7 @@ MENUITEMS = [
     ('About', '/pages/about'),
     ('Projects', '/pages/projects'),
     ('Contact', '/pages/contact'),
-    ('Donuts', '/pages/donuts'),
+    ('Donuts', '/images/donuts/donuts'),
 ]
 
 PATH = 'content'
