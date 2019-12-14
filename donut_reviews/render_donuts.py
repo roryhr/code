@@ -42,11 +42,12 @@ def leaflet_json(points_df, output_file='output/map_data.json'):
         json.dump(result, f)
 
 
-# Link file name to relative path images/donuts/Donutselfies_bMxPRLTyVg/
+# Link file name to relative path in donuts/ so just Donutselfies_bMxPRLTyVg
 donut_selfies_path = '/Users/rory/public_code/website_code/content/images/donuts/Donutselfies_bMxPRLTyVg'
 p = Path(donut_selfies_path)
 image_paths = {
-    path.name: path.absolute()
+    # path.name: path.absolute()
+    path.name: os.path.join(*path.parts[-2:])
     for path
     in p.glob('*.jpg')
 }
