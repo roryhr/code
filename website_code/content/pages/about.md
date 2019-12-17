@@ -1,7 +1,8 @@
 Title: About
 
-Rory Hartong-Redden is Data Engineer/Data Scientist.
-My tools of choice are Python, Spark, Shell, and SQL.
+Rory Hartong-Redden is a data scientist and engineer currently in California. 
+He's worked with lots of data primarily with Python, Spark, and Hadoop. 
+
 
 # Long Bio
 

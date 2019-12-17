@@ -3,6 +3,14 @@ Title: Projects
 As I write more posts about what I'm working on (or finished, let's say) I'll
 link to them here.
 
+# Donut Reviews
+
+Since 2014 I've been adding to a personal Facebook album called "Donut Selfies". 
+When I visit a new place I look for a mom-and-pop donut shop, try out their wares, and take a bad selfie.
+I've been to over 100 donut shops all over the world!
+Click the "Donuts" link to see the website and the code is [here](https://github.com/roryhr/code/tree/master/donut_reviews).
+This project was an excuse to learn about CSS, Bootstrap, and Javascript.
+
 # How Much Wes Anderson?
 
 Have you spent hours scrolling through [@accidentallywesanderson](https://www.instagram.com/accidentallywesanderson/) on Instagram? 
@@ -11,6 +19,8 @@ Well, yes, I did it!
 Upload an image and check it out.
 
 [How Much Wes?](https://how-much-wes.herokuapp.com/)
+
+The code for it is [here](https://github.com/roryhr/code/tree/master/how_much_wes).
 
 # Running Analysis 
 
@@ -21,9 +31,7 @@ It's a Flask app that makes a couple of Strava API calls and renders some plots 
 [running analytics repo](https://github.com/roryhr/running_analytics)
 
 
-# Retired
-
-## cookiecutter-pyspark
+# cookiecutter-pyspark
 
 Cookiecutter generates project templates and is a good place to learn best practices. 
 I didn't see a PySpark template so I made one. 
