@@ -3,6 +3,9 @@
 Loads photo album metadata and links to images. Renders
 donut_template.html using Jinja2. 
 
+Usage:
+$ cd donut_reviews
+$ python render_donuts.py
 """
 import json
 import os

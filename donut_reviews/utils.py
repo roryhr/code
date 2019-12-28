@@ -20,4 +20,5 @@ def export_facebook(album_file):
     df.to_csv('exported_donut_album.csv')
 
 if __name__ == '__main__':
-    export_facebook('/Users/rory/data/facebook-3629808/photos_and_videos/album/0.json')
+    # export_facebook('/Users/rory/data/facebook-3629808/photos_and_videos/album/0.json')
+    export_facebook('/Users/rory/data/facebook-3629808_1/photos_and_videos/album/4.json')
