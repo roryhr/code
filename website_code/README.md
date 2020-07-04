@@ -1,3 +1,8 @@
-# site-code
+# Website Code
 
-[render_math](https://github.com/barrysteyn/pelican_plugin-render_math.git) is a git repository and not included here. 
+Here's code for my static website that is hosted on Github. 
+I use the Pelican to generate the html from markdown files. 
+
+
+`make dev` starts a local server that watches the `content/`.
+The output html is hosted in a separate git repo. 

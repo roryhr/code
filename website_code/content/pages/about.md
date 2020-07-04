@@ -1,15 +1,19 @@
 Title: About
 
-Rory Hartong-Redden is a data scientist and engineer currently in California. 
-He's worked with lots of data primarily with Python, Spark, and Hadoop. 
+Rory Hartong-Redden is a data scientist based in Chicago. 
+He's worked with lots of data primarily with Python, Spark, and Hadoop.
 
 
 # Long Bio
 
-Rory Hartong-Redden was born in Los Angeles, grew up in the Bay Area, and visits his parents on the Central Coast. 
-For a change of scenery he moved from Silicon Valley to Linz, Austria.
+In early 2020 Rory joined the manufacturing startup [Fast Radius](https://www.fastradius.com/) as a data scientist. He is based in Chicago but spends most days inside except when he's outside running.
 
-Prior to joining Runtastic Rory Hartong-Redden was a Data Scientist at Allstate in Menlo Park, CA. 
+
+In 2018 Rory decided to move from Silicon Valley to Linz, Austria to work at [runtastic](https://www.runtastic.com/). 
+At runtastic (now adidas runtastic) he was a data engineer working on data pipelines feeding internal analytics as well as product features.
+
+
+Prior to joining Runtastic Rory Hartong-Redden was a data scientist at Allstate in Menlo Park, CA. 
 While at Allstate he collaborated with the Stanford Intelligent Systems Lab on autonomous vehicle safety.
 The project was described in a recent [press release](https://www.allstatenewsroom.com/news/allstate-announces-autonomous-vehicle-research-agreement/) and has resulted in several publications.
 

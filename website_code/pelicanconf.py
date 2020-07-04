@@ -13,7 +13,6 @@ DISPLAY_CATEGORIES_ON_MENU = False
 MENUITEMS = [
     ('Home', '/'),
     ('Articles', '/articles'),
-    ('Archives', '/archives'),
     ('About', '/pages/about'),
     ('Projects', '/pages/projects'),
     ('Contact', '/pages/contact'),
@@ -32,6 +31,7 @@ DEFAULT_LANG = 'en'
 
 # Blogroll
 LINKS = [
+    ('ChiPy', 'https://www.chipy.org/'),
     ('BayPIGies', 'http://baypiggies.net/'),
     ('Pyninsula', 'http://pyninsula.org/'),
     ('SF Python', 'http://sfpythonmeetup.com/'),
