@@ -2,12 +2,16 @@
 # start server on port 8000
 dev:
 	source activate web && \
-	pelican --listen
+	pelican --listen --autoreload --relative-urls
 
 clean:
 	./develop_server.sh stop && \
 	rm -rf __pycache__/
 
 publish:
-	cd output/
-	git commit 
+	source activate web && \
+	pelican && \
+	cd output/ && \
+	git add -A && \
+	git commit && \
+	git push
