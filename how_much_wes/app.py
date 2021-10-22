@@ -7,67 +7,68 @@ $ flask run
 or with Heroku
 $ heroku local
 """
-import io
 import os
-import pickle 
-import pandas as pd
-import numpy as np
-import requests
-
-from flask import (
-    Flask, make_response, send_file, render_template,
-    flash, request, redirect, url_for
-    )
-from werkzeug.utils import secure_filename
+import pickle
+from pathlib import Path
 
 import keras
+import numpy as np
+import pandas as pd
+from flask import (
+    Flask,
+    render_template,
+    flash,
+    request,
+    redirect,
+    url_for,
+)
+from keras import backend as K
 from keras.applications.vgg16 import VGG16, preprocess_input
 from keras.preprocessing import image
+from werkzeug.utils import secure_filename
 
-from keras import backend as K
+assert K.image_data_format() == "channels_last"
 
-assert K.image_data_format() == 'channels_last'
-
-if os.environ.get('FLASK_ENV') == 'development':
+if os.environ.get("FLASK_ENV") == "development":
     from dotenv import load_dotenv
+
     load_dotenv()
 
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".gif"}
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = 'static'
+app.config["UPLOAD_FOLDER"] = "static"
 
-model = VGG16(weights='imagenet', include_top=False)
-small_model = keras.models.load_model('small_cnn_2.h5')
+model = VGG16(weights="imagenet", include_top=False)
+small_model = keras.models.load_model("small_cnn_2.h5")
 
-with open('rf_classifier_11_07_2019.pickle', 'rb') as f:
+with open("rf_classifier_11_07_2019.pickle", "rb") as f:
     clf = pickle.load(f)
 
 
 def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    return Path(filename).suffix in ALLOWED_EXTENSIONS
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route("/", methods=["GET", "POST"])
 def upload_file():
-    if request.method == 'POST':
+    if request.method == "POST":
         # check if the post request has the file part
-        if 'file' not in request.files:
-            flash('No file part')
+        if "file" not in request.files:
+            flash("No file part")
             return redirect(request.url)
-        file = request.files['file']
+        file = request.files["file"]
         # if user does not select file, browser also
         # submit an empty part without filename
-        if file.filename == '':
-            flash('No selected file')
+        if file.filename == "":
+            flash("No selected file")
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
             file.save(filepath)
-            return redirect(url_for('wes_probability', filename=filename))
-    return render_template('index.html')
+            return redirect(url_for("wes_probability", filename=filename))
+    return render_template("index.html")
 
 
 def vgg_features(img_path):
@@ -93,11 +94,11 @@ def vgg_features(img_path):
     return df
 
 
-@app.route('/predict')
+@app.route("/predict")
 def predict(image_file):
     features_df = vgg_features(image_file)
-    proba = clf.predict_proba(features_df)
-    return proba[0][1]
+    probability = clf.predict_proba(features_df)
+    return probability[0][1]
 
 
 def predict_small_cnn(img_path):
@@ -122,19 +123,15 @@ def predict_small_cnn(img_path):
     return proba[0][0]
 
 
-@app.route('/wes_probability/<filename>')
+@app.route("/wes_probability/<filename>")
 def wes_probability(filename):
     """Load image and render html result"""
-    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
 
     proba = round(predict_small_cnn(filepath), 2)
-    result = f'{int(100*proba)}% Wes Anderson'
-    return render_template(
-        'wes_result.html',
-        image_link=filename,
-        result=result,
-    )
+    result = f"{int(100*proba)}% Wes Anderson"
+    return render_template("wes_result.html", image_link=filename, result=result,)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(predict())
