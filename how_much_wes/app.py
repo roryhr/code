@@ -16,7 +16,18 @@ from pathlib import Path
 import keras
 import numpy as np
 import pandas as pd
+<<<<<<< HEAD
 from flask import Flask, render_template, flash, request, redirect, url_for
+=======
+from flask import (
+    Flask,
+    render_template,
+    flash,
+    request,
+    redirect,
+    url_for,
+)
+>>>>>>> 711bb947faec91ce78da4edc02a709438ac1b551
 from keras import backend as K
 from keras.applications.vgg16 import VGG16, preprocess_input
 from keras.preprocessing import image
@@ -92,8 +103,8 @@ def vgg_features(img_path):
 @app.route("/predict")
 def predict(image_file):
     features_df = vgg_features(image_file)
-    proba = clf.predict_proba(features_df)
-    return proba[0][1]
+    probability = clf.predict_proba(features_df)
+    return probability[0][1]
 
 
 def predict_small_cnn(img_path):
@@ -125,11 +136,15 @@ def wes_probability(filename):
 
     proba = round(predict_small_cnn(filepath), 2)
     result = f"{int(100*proba)}% Wes Anderson"
+<<<<<<< HEAD
     return render_template(
         "wes_result.html",
         image_link=filename,
         result=result,
     )
+=======
+    return render_template("wes_result.html", image_link=filename, result=result,)
+>>>>>>> 711bb947faec91ce78da4edc02a709438ac1b551
 
 
 if __name__ == "__main__":

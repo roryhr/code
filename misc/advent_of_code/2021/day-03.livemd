@@ -1,0 +1,159 @@
+# Day 3
+
+## Section
+
+```elixir
+Mix.install([{:kino, github: "livebook-dev/kino"}])
+```
+
+```elixir
+kino_input = Kino.Input.textarea("Paste input file:")
+```
+
+```elixir
+# input = Kino.Input.read(input)
+input = """
+00100
+11110
+10110
+10111
+10101
+01111
+00111
+11100
+10000
+11001
+00010
+01010
+"""
+
+gamma_rate =
+  input
+  |> String.split("\n", trim: true)
+  |> Enum.map(fn x -> String.split(x, "", trim: true) end)
+  |> Enum.zip()
+  |> Enum.map(fn x -> Enum.frequencies(Tuple.to_list(x)) end)
+  |> Enum.map(fn %{"0" => x, "1" => y} ->
+    if x > y do
+      "0"
+    else
+      "1"
+    end
+  end)
+  |> List.to_string()
+  |> Integer.parse(2)
+  |> elem(0)
+
+epsilon_rate =
+  input
+  |> String.split("\n", trim: true)
+  |> Enum.map(fn x -> String.split(x, "", trim: true) end)
+  |> Enum.zip()
+  |> Enum.map(fn x -> Enum.frequencies(Tuple.to_list(x)) end)
+  |> Enum.map(fn %{"0" => x, "1" => y} ->
+    if x < y do
+      "0"
+    else
+      "1"
+    end
+  end)
+  |> List.to_string()
+  |> Integer.parse(2)
+  |> elem(0)
+
+gamma_rate * epsilon_rate
+```
+
+```elixir
+# Better solution to Part 1
+Kino.Input.read(kino_input)
+|> String.split("\n", trim: true)
+|> Enum.map(fn line -> String.split(line, "", trim: true) end)
+|> Enum.zip_with(&Enum.frequencies/1)
+|> Enum.map(fn counts -> if counts["0"] > counts["1"], do: ["0", "1"], else: ["1", "0"] end)
+|> Enum.zip_with(&Enum.join/1)
+|> Enum.reduce(1, fn number, product -> String.to_integer(number, 2) * product end)
+```
+
+## Part 2
+
+<!-- livebook:{"reevaluate_automatically":true} -->
+
+```elixir
+# input = Kino.Input.read(input)
+input = """
+00100
+11110
+10110
+10111
+10101
+01111
+00111
+11100
+10000
+11001
+00010
+01010
+"""
+
+input
+|> String.split("\n", trim: true)
+|> Enum.map(&String.split(&1, "", trim: true))
+|> Enum.zip()
+|> Enum.map(fn x -> Enum.frequencies(Tuple.to_list(x)) end)
+|> Enum.max_by(fn x -> Map.values(x) end)
+|> Enum.map(fn %{"0" => x, "1" => y} ->
+  if x > y do
+    "0"
+  else
+    "1"
+  end
+end)
+|> List.to_string()
+|> Integer.parse(2)
+|> elem(0)
+```
+
+```elixir
+input = Kino.Input.textarea("Paste input file:")
+```
+
+```elixir
+defmodule Day3 do
+  def input(input) do
+    input
+    |> String.split("\n", trim: true)
+  end
+
+  def oxygen([final_value], _position) do
+    String.to_integer(final_value, 2)
+  end
+
+  def oxygen(data, position) do
+    data
+    |> Enum.group_by(fn num -> String.at(num, position) end)
+    |> Enum.max_by(&number_sorter/1)
+    |> elem(1)
+    |> oxygen(position + 1)
+  end
+
+  def carbon([final_value], _position) do
+    String.to_integer(final_value, 2)
+  end
+
+  def carbon(data, position) do
+    data
+    |> Enum.group_by(fn num -> String.at(num, position) end)
+    |> Enum.min_by(&number_sorter/1)
+    |> elem(1)
+    |> carbon(position + 1)
+  end
+
+  defp number_sorter({target_bit, bit_list}) do
+    length(bit_list) + 0.1 * String.to_integer(target_bit)
+  end
+end
+
+data = Day3.input(Kino.Input.read(input))
+Day3.oxygen(data, 0) * Day3.carbon(data, 0)
+```

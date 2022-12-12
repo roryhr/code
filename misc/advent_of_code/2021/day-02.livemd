@@ -1,0 +1,40 @@
+# Day 2
+
+## Section
+
+```elixir
+Mix.install([{:kino, github: "livebook-dev/kino"}])
+```
+
+```elixir
+input = Kino.Input.textarea("Paste input file:")
+```
+
+```elixir
+directions = %{"forward" => {1, 0}, "down" => {0, 1}, "up" => {0, -1}}
+
+Kino.Input.read(input)
+|> String.split("\n", trim: true)
+|> Enum.map(fn x -> String.split(x) end)
+|> Enum.map(fn [x, y] -> [x, String.to_integer(y)] end)
+|> Enum.map(fn [dir, x] -> {elem(directions[dir], 0) * x, elem(directions[dir], 1) * x} end)
+|> Enum.unzip()
+|> then(fn {x, y} -> Enum.sum(x) * Enum.sum(y) end)
+```
+
+## Part 2
+
+```elixir
+directions = %{"forward" => {1, 0}, "down" => {0, 1}, "up" => {0, -1}}
+
+Kino.Input.read(input)
+|> String.split("\n", trim: true)
+|> Enum.map(fn x -> String.split(x) end)
+|> Enum.map(fn [x, y] -> [x, String.to_integer(y)] end)
+|> Enum.reduce({_position = 0, _depth = 0, _aim = 0}, fn
+  ["forward", x], {position, depth, aim} -> {position + x, depth + aim * x, aim}
+  ["down", x], {position, depth, aim} -> {position, depth, aim + x}
+  ["up", x], {position, depth, aim} -> {position, depth, aim - x}
+end)
+|> then(fn {position, depth, _aim} -> position * depth end)
+```

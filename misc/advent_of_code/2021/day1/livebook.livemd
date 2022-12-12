@@ -1,0 +1,37 @@
+# Day 1
+
+## Part 1
+
+## Section
+
+```elixir
+Mix.install([{:kino, github: "livebook-dev/kino"}])
+```
+
+```elixir
+input = Kino.Input.textarea("Paste input file:")
+```
+
+```elixir
+Kino.Input.read(input)
+|> String.split("\n", trim: true)
+|> Enum.map(fn x -> String.to_integer(x) end)
+|> Enum.chunk_every(2, 1, :discard)
+|> Enum.filter(fn [left, right] -> right > left end)
+|> Enum.count()
+```
+
+## Part 2
+
+```elixir
+input = Kino.Input.textarea("Paste input file:")
+```
+
+```elixir
+Kino.Input.read(input)
+|> String.split("\n", trim: true)
+|> Enum.map(fn x -> String.to_integer(x) end)
+|> Enum.chunk_every(3, 1, :discard)
+|> Enum.chunk_every(2, 1, :discard)
+|> Enum.count(fn [x, y] -> Enum.sum(y) > Enum.sum(x) end)
+```
