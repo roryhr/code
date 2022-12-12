@@ -1,12 +1,13 @@
 Title: About
 
-Rory Hartong-Redden is a data scientist based in Chicago. 
-He's worked with lots of data primarily with Python, Spark, and Hadoop.
+Rory Hartong-Redden is a data scientist and manager in Boulder. 
+He's worked with lots of data using Python.
 
 
 # Long Bio
 
-In early 2020 Rory joined the manufacturing startup [Fast Radius](https://www.fastradius.com/) as a data scientist. He is based in Chicago but spends most days inside except when he's outside running.
+In early 2020 Rory joined the manufacturing startup [Fast Radius](https://www.fastradius.com/) as a data scientist where he worked in their Chicago office.
+In 2021 Rory moved to Boulder, where he works 100% remotely, and was promoted to manager as the data science team grew.
 
 
 In 2018 Rory decided to move from Silicon Valley to Linz, Austria to work at [runtastic](https://www.runtastic.com/). 
