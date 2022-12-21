@@ -6,6 +6,8 @@ $ flask run
 
 or with Heroku
 $ heroku local
+
+Access at http://localhost:5000/
 """
 import os
 import pickle
@@ -14,6 +16,9 @@ from pathlib import Path
 import keras
 import numpy as np
 import pandas as pd
+<<<<<<< HEAD
+from flask import Flask, render_template, flash, request, redirect, url_for
+=======
 from flask import (
     Flask,
     render_template,
@@ -22,6 +27,7 @@ from flask import (
     redirect,
     url_for,
 )
+>>>>>>> 711bb947faec91ce78da4edc02a709438ac1b551
 from keras import backend as K
 from keras.applications.vgg16 import VGG16, preprocess_input
 from keras.preprocessing import image
@@ -130,7 +136,15 @@ def wes_probability(filename):
 
     proba = round(predict_small_cnn(filepath), 2)
     result = f"{int(100*proba)}% Wes Anderson"
+<<<<<<< HEAD
+    return render_template(
+        "wes_result.html",
+        image_link=filename,
+        result=result,
+    )
+=======
     return render_template("wes_result.html", image_link=filename, result=result,)
+>>>>>>> 711bb947faec91ce78da4edc02a709438ac1b551
 
 
 if __name__ == "__main__":
