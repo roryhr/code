@@ -21,27 +21,25 @@ from flask import (
     redirect,
     url_for,
 )
-from keras import backend as K
+
+# from keras import backend as K
 from keras.applications.vgg16 import VGG16, preprocess_input
-from keras.preprocessing import image
+from tensorflow.keras import utils
 from werkzeug.utils import secure_filename
 
-assert K.image_data_format() == "channels_last"
+# assert K.image_data_format() == "channels_last"
 
-if os.environ.get("FLASK_ENV") == "development":
-    from dotenv import load_dotenv
-
-    load_dotenv()
 
 ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".gif"}
 
 app = Flask(__name__)
-app.config["UPLOAD_FOLDER"] = "static"
+app.config["UPLOAD_FOLDER"] = "tmp"
 
-model = VGG16(weights="imagenet", include_top=False)
-small_model = keras.models.load_model("small_cnn_2.h5")
+with open("vgg_model.pickle", "rb") as f:
+    model = pickle.load(f)
 
-with open("rf_classifier_11_07_2019.pickle", "rb") as f:
+
+with open("rf_classifier_2023.pickle", "rb") as f:
     clf = pickle.load(f)
 
 
@@ -66,7 +64,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
             file.save(filepath)
-            return redirect(url_for("wes_probability", filename=filename))
+            return redirect(url_for("wes_probability", filename=filepath))
     return render_template("index.html")
 
 
@@ -83,8 +81,8 @@ def vgg_features(img_path):
     df : pandas.core.frame.DataFrame
         DataFrame with 1 row of features
     """
-    img = image.load_img(img_path, target_size=(224, 224))
-    x = image.img_to_array(img)
+    img = utils.load_img(img_path, target_size=(224, 224))
+    x = utils.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
 
@@ -93,41 +91,21 @@ def vgg_features(img_path):
     return df
 
 
-@app.route("/predict")
 def predict(image_file):
     features_df = vgg_features(image_file)
     probability = clf.predict_proba(features_df)
     return probability[0][1]
 
 
-def predict_small_cnn(img_path):
-    """Compute VGG features
-
-    Parameters
-    ----------
-    img_path : _io.BytesIO
-        File path or Byte stream
-
-    Returns
-    -------
-     : float
-        Probabillity it is Wes
-    """
-    img = image.load_img(img_path, target_size=(150, 150))
-    x = image.img_to_array(img)
-    x = np.expand_dims(x, axis=0)
-    x = x / 255.0
-
-    proba = small_model.predict(x)
-    return proba[0][0]
-
-
 @app.route("/wes_probability/<filename>")
 def wes_probability(filename):
     """Load image and render html result"""
-    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+    if filename in ["wes_image_1.jpg", "grand_budapest_hotel-0136_cropped.jpg"]:
+        filepath = os.path.join("static", filename)
+    else:
+        filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
 
-    proba = round(predict_small_cnn(filepath), 2)
+    proba = round(predict(filepath), 2)
     result = f"{int(100*proba)}% Wes Anderson"
     return render_template(
         "wes_result.html",
@@ -137,4 +115,4 @@ def wes_probability(filename):
 
 
 if __name__ == "__main__":
-    print(predict())
+    print(predict("static/grand_budapest_hotel-0136_cropped.jpg"))
