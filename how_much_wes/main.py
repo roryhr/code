@@ -1,16 +1,15 @@
 """How much Wes Anderson?
 
-Usage:
-$ export FLASK_APP=main.py
-$ flask run
+Run it locally:
+$ flask --app main --debug run
 
 Access at http://localhost:5000/
 """
+import logging
 import os
 import pickle
 from pathlib import Path
 
-import keras
 import numpy as np
 import pandas as pd
 from flask import (
@@ -21,26 +20,17 @@ from flask import (
     redirect,
     url_for,
 )
-
-# from keras import backend as K
-from keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras import utils
+from tensorflow.keras.applications.vgg16 import preprocess_input
 from werkzeug.utils import secure_filename
-
-# assert K.image_data_format() == "channels_last"
 
 
 ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".gif"}
 
+logging.info("creating flask app")
+
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "tmp"
-
-with open("vgg_model.pickle", "rb") as f:
-    model = pickle.load(f)
-
-
-with open("rf_classifier_2023.pickle", "rb") as f:
-    clf = pickle.load(f)
 
 
 def allowed_file(filename):
@@ -49,6 +39,8 @@ def allowed_file(filename):
 
 @app.route("/", methods=["GET", "POST"])
 def upload_file():
+    print("App route index")
+
     if request.method == "POST":
         # check if the post request has the file part
         if "file" not in request.files:
@@ -81,6 +73,11 @@ def vgg_features(img_path):
     df : pandas.core.frame.DataFrame
         DataFrame with 1 row of features
     """
+    print("loading pickled vgg")
+
+    with open("vgg_model.pickle", "rb") as f:
+        model = pickle.load(f)
+
     img = utils.load_img(img_path, target_size=(224, 224))
     x = utils.img_to_array(img)
     x = np.expand_dims(x, axis=0)
@@ -92,6 +89,11 @@ def vgg_features(img_path):
 
 
 def predict(image_file):
+
+    logging.info("loading picled models")
+
+    with open("rf_classifier_2023.pickle", "rb") as f:
+        clf = pickle.load(f)
     features_df = vgg_features(image_file)
     probability = clf.predict_proba(features_df)
     return probability[0][1]
@@ -114,5 +116,5 @@ def wes_probability(filename):
     )
 
 
-if __name__ == "__main__":
-    print(predict("static/grand_budapest_hotel-0136_cropped.jpg"))
+# if __name__ == "__main__":
+#     print(predict("static/grand_budapest_hotel-0136_cropped.jpg"))
