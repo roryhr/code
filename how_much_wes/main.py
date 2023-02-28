@@ -5,13 +5,10 @@ $ flask --app main --debug run
 
 Access at http://localhost:5000/
 """
-import logging
 import os
-import pickle
 from pathlib import Path
 
-import numpy as np
-import pandas as pd
+import tensorflow as tf
 from flask import (
     Flask,
     render_template,
@@ -20,17 +17,16 @@ from flask import (
     redirect,
     url_for,
 )
-from tensorflow.keras import utils
-from tensorflow.keras.applications.vgg16 import preprocess_input
+from tensorflow import keras
 from werkzeug.utils import secure_filename
-
 
 ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".gif"}
 
-logging.info("creating flask app")
 
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "tmp"
+
+loaded_model = tf.keras.models.load_model("tuned_xception.keras")
 
 
 def allowed_file(filename):
@@ -60,43 +56,16 @@ def upload_file():
     return render_template("index.html")
 
 
-def vgg_features(img_path):
-    """Compute VGG features
-
-    Parameters
-    ----------
-    img_path : _io.BytesIO
-        File path or Byte stream
-
-    Returns
-    -------
-    df : pandas.core.frame.DataFrame
-        DataFrame with 1 row of features
-    """
-    print("loading pickled vgg")
-
-    with open("vgg_model.pickle", "rb") as f:
-        model = pickle.load(f)
-
-    img = utils.load_img(img_path, target_size=(224, 224))
-    x = utils.img_to_array(img)
-    x = np.expand_dims(x, axis=0)
-    x = preprocess_input(x)
-
-    features = model.predict(x)
-    df = pd.DataFrame(data=features.ravel()).transpose()
-    return df
-
-
 def predict(image_file):
+    img = keras.preprocessing.image.load_img(
+        image_file,
+        target_size=(150, 150),
+    )
+    img_array = keras.preprocessing.image.img_to_array(img)
+    img_array = tf.expand_dims(img_array, 0)  # Create batch axis
 
-    logging.info("loading picled models")
-
-    with open("rf_classifier_2023.pickle", "rb") as f:
-        clf = pickle.load(f)
-    features_df = vgg_features(image_file)
-    probability = clf.predict_proba(features_df)
-    return probability[0][1]
+    predictions = loaded_model.predict(img_array)
+    return float(predictions)
 
 
 @app.route("/wes_probability/<filename>")
@@ -106,15 +75,10 @@ def wes_probability(filename):
         filepath = os.path.join("static", filename)
     else:
         filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-
-    proba = round(predict(filepath), 2)
-    result = f"{int(100*proba)}% Wes Anderson"
+    score = round(100 * (predict(filepath)))
+    result = f"This image is {score}% Wes Anderson"
     return render_template(
         "wes_result.html",
         image_link=filename,
         result=result,
     )
-
-
-# if __name__ == "__main__":
-#     print(predict("static/grand_budapest_hotel-0136_cropped.jpg"))

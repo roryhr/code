@@ -8,18 +8,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <style>
-      .img-fluid {
-        max-width: 100%; 
-        height: auto;
-      }
-    </style>
     <title>How Much Wes Anderson?</title>
   </head>
 
   <body>
     <main role="main" class="container">
-
       <div class="starter-template">
         <h1>How Much Wes Anderson?</h1>
         <p class="lead">
@@ -27,7 +20,7 @@
         </p>
       </div>
 
-      <div class="card" style="width: 28rem;">
+      <div class="card" style="width: 30rem;">
         <img src="{{url_for('static', filename='grand_budapest_hotel-0136_cropped.jpg')}}" class="card-img-top"/>
         <div class="card-body">
           <p class="card-text">
@@ -36,44 +29,41 @@
         </div>  
       </div>
 
-      <p>
+      <div style="width: 30rem;">
+        <p>
         Test it out with the
         <a href="{{url_for('wes_probability', filename='grand_budapest_hotel-0136_cropped.jpg')}}"> upper image</a>
         or with the <a href="{{url_for('wes_probability', filename='wes_image_1.jpg')}}"> lower image</a>
-        or upload your own image to see how much Wes Anderson it has.
-      </p>
-      <form method=post enctype=multipart/form-data>
-        <div class="form-group">
-          <input type=file name=file class="form-control-file">
-        </div>
+        or upload your own image to see how much Wes Anderson it is.
+        </p>
+      </div>
 
-        <button type=submit class="btn btn-primary">Upload</button>
-      </form>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file">
+      <button type="submit">Upload</button>
+    </form>
 
-
-
-      <div class="card" style="width: 28rem;">
+      <div class="card" style="width: 30rem;">
         <img src="{{url_for('static', filename='wes_image_1.jpg')}}" class="card-img-top"/>
         <div class="card-body">
           <p class="card-text">A fine example from @accidentallywesanderson Instagram feed.</p>
         </div>        
       </div>
 
-      <h2>How does it work?</h2>
-      <p>
-        Currently I'm using a small CNN on a total of about 2000 training images.
-        Check out the excellent Keras tutorial 
+      <div style="width: 30rem;">
+        <h2>How does it work?</h2>
+        <p>
+          In 2019 I trained a small CNN on a total of about 4000 training images pulled from the Wes Anderson trailers on YouTube along with some images from Instagram.
+          The model was built following the tutorial
         <a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html">
           Building powerful image classification models using very little data
         </a>.
-        The hardest part for me was making this website!
-      </p>
+          In 2023 the model was updated to Tensorflow 2 following the latest transfer learning example.
+        </p>
+        <p>
+          This webapp was originally served on Heroku (pour one out) and is now served from the free tier of Google App Engine.
+        </p>
+      </div>
     </main>
-
-      <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
