@@ -1,18 +1,14 @@
 """How much Wes Anderson?
 
-Usage:
-$ export FLASK_APP=main.py
-$ flask run
+Run it locally:
+$ flask --app main --debug run
 
 Access at http://localhost:5000/
 """
 import os
-import pickle
 from pathlib import Path
 
-import keras
-import numpy as np
-import pandas as pd
+import tensorflow as tf
 from flask import (
     Flask,
     render_template,
@@ -21,28 +17,16 @@ from flask import (
     redirect,
     url_for,
 )
-from keras import backend as K
-from keras.applications.vgg16 import VGG16, preprocess_input
-from keras.preprocessing import image
+from tensorflow import keras
 from werkzeug.utils import secure_filename
-
-assert K.image_data_format() == "channels_last"
-
-if os.environ.get("FLASK_ENV") == "development":
-    from dotenv import load_dotenv
-
-    load_dotenv()
 
 ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".gif"}
 
+
 app = Flask(__name__)
-app.config["UPLOAD_FOLDER"] = "static"
+app.config["UPLOAD_FOLDER"] = "tmp"
 
-model = VGG16(weights="imagenet", include_top=False)
-small_model = keras.models.load_model("small_cnn_2.h5")
-
-with open("rf_classifier_11_07_2019.pickle", "rb") as f:
-    clf = pickle.load(f)
+loaded_model = tf.keras.models.load_model("tuned_xception.keras")
 
 
 def allowed_file(filename):
@@ -51,6 +35,8 @@ def allowed_file(filename):
 
 @app.route("/", methods=["GET", "POST"])
 def upload_file():
+    print("App route index")
+
     if request.method == "POST":
         # check if the post request has the file part
         if "file" not in request.files:
@@ -66,75 +52,33 @@ def upload_file():
             filename = secure_filename(file.filename)
             filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
             file.save(filepath)
-            return redirect(url_for("wes_probability", filename=filename))
+            return redirect(url_for("wes_probability", filename=filepath))
     return render_template("index.html")
 
 
-def vgg_features(img_path):
-    """Compute VGG features
-
-    Parameters
-    ----------
-    img_path : _io.BytesIO
-        File path or Byte stream
-
-    Returns
-    -------
-    df : pandas.core.frame.DataFrame
-        DataFrame with 1 row of features
-    """
-    img = image.load_img(img_path, target_size=(224, 224))
-    x = image.img_to_array(img)
-    x = np.expand_dims(x, axis=0)
-    x = preprocess_input(x)
-
-    features = model.predict(x)
-    df = pd.DataFrame(data=features.ravel()).transpose()
-    return df
-
-
-@app.route("/predict")
 def predict(image_file):
-    features_df = vgg_features(image_file)
-    probability = clf.predict_proba(features_df)
-    return probability[0][1]
+    img = keras.preprocessing.image.load_img(
+        image_file,
+        target_size=(150, 150),
+    )
+    img_array = keras.preprocessing.image.img_to_array(img)
+    img_array = tf.expand_dims(img_array, 0)  # Create batch axis
 
-
-def predict_small_cnn(img_path):
-    """Compute VGG features
-
-    Parameters
-    ----------
-    img_path : _io.BytesIO
-        File path or Byte stream
-
-    Returns
-    -------
-     : float
-        Probabillity it is Wes
-    """
-    img = image.load_img(img_path, target_size=(150, 150))
-    x = image.img_to_array(img)
-    x = np.expand_dims(x, axis=0)
-    x = x / 255.0
-
-    proba = small_model.predict(x)
-    return proba[0][0]
+    predictions = loaded_model.predict(img_array)
+    return float(predictions)
 
 
 @app.route("/wes_probability/<filename>")
 def wes_probability(filename):
     """Load image and render html result"""
-    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-
-    proba = round(predict_small_cnn(filepath), 2)
-    result = f"{int(100*proba)}% Wes Anderson"
+    if filename in ["wes_image_1.jpg", "grand_budapest_hotel-0136_cropped.jpg"]:
+        filepath = os.path.join("static", filename)
+    else:
+        filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+    score = round(100 * (predict(filepath)))
+    result = f"This image is {score}% Wes Anderson"
     return render_template(
         "wes_result.html",
         image_link=filename,
         result=result,
     )
-
-
-if __name__ == "__main__":
-    print(predict())
