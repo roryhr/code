@@ -17,14 +17,13 @@ from flask import (
     redirect,
     url_for,
 )
-from tensorflow import keras
 from werkzeug.utils import secure_filename
 
 ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".gif"}
 
 
 app = Flask(__name__)
-app.config["UPLOAD_FOLDER"] = "tmp"
+app.config["UPLOAD_FOLDER"] = "static"
 
 loaded_model = tf.keras.models.load_model("tuned_xception.keras")
 
@@ -35,8 +34,6 @@ def allowed_file(filename):
 
 @app.route("/", methods=["GET", "POST"])
 def upload_file():
-    print("App route index")
-
     if request.method == "POST":
         # check if the post request has the file part
         if "file" not in request.files:
@@ -52,16 +49,16 @@ def upload_file():
             filename = secure_filename(file.filename)
             filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
             file.save(filepath)
-            return redirect(url_for("wes_probability", filename=filepath))
+            return redirect(url_for("wes_probability", filename=filename))
     return render_template("index.html")
 
 
 def predict(image_file):
-    img = keras.preprocessing.image.load_img(
+    img = tf.keras.preprocessing.image.load_img(
         image_file,
         target_size=(150, 150),
     )
-    img_array = keras.preprocessing.image.img_to_array(img)
+    img_array = tf.keras.preprocessing.image.img_to_array(img)
     img_array = tf.expand_dims(img_array, 0)  # Create batch axis
 
     predictions = loaded_model.predict(img_array)
@@ -79,6 +76,6 @@ def wes_probability(filename):
     result = f"This image is {score}% Wes Anderson"
     return render_template(
         "wes_result.html",
-        image_link=filename,
+        image_link=filepath,
         result=result,
     )

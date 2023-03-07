@@ -1,2 +1,3 @@
 runtime: python38
 entrypoint: gunicorn --timeout 90 -w 1 main:app
+instance_class: F4_1G

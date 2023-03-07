@@ -34,14 +34,22 @@ Original runtime is Python 3.6. The minimum runtime App Engine accepts is 3.7.
 If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 called `app` in `main.py`.
 
-
 ```
 conda create -n new_wes python=3.8 keras flask pandas scikit-learn matplotlib h5py pillow requests tensorflow jupyter
 
 ```
 
-For tests 
+For tests
 
 ```
 conda install pytest
+```
+
+# Docker
+
+Needs 1GB of memory to build and run.
+
+```
+docker build --tag slim-wes .
+docker run --publish 8080:8080 slim-wes
 ```
