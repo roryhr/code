@@ -3,6 +3,13 @@ Title: About
 Rory Hartong-Redden is a data scientist and manager in Boulder. 
 He's worked with lots of data using Python.
 
+# Resume
+
+My resume is lovingly hand-crafted with LaTeX and stored in my [resume](https://github.com/roryhr/resume) repo.
+
+[Resume](https://github.com/roryhr/resume/raw/master/rhartong_redden_resume.pdf)
+
+[CV](https://github.com/roryhr/resume/raw/master/rhartong_redden_cv.pdf)
 
 # Long Bio
 
@@ -24,12 +31,3 @@ Unfortunately he did anticipate Bitcoin blowing up the way it did.
 Rory earned two bachelors degrees in Physics and Mechanical Engineering at UC Santa Barbara. 
 His undergraduate research studied the structure of splashed using stereo high-speed cameras.
 Rory completed a masters in Mechanical Engineering and continued to work in experimental fluid dynamics where he built a new fluid dynamics experiment that measured fluid motion using a novel computer vision system.
-
-
-# Resume
-
-My resume is lovingly hand-crafted in small batches using LaTeX. 
-
-[Resume](https://github.com/roryhr/code/raw/master/resume/rhartong_redden_resume.pdf)
-
-[CV](https://github.com/roryhr/code/raw/master/resume/rhartong_redden_cv.pdf)

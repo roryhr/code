@@ -7,4 +7,4 @@ you can reach me via email:
 'roryhr' + '@' + 'gmail.com'
 ```
 
-I'm also active on Twitter where I post jokes and click on links.
+The social widget has links to other places on the internet where I may be found.

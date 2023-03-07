@@ -1,5 +1,4 @@
-
-# start server on port 8000
+# start server on http://localhost:8000/
 dev:
 	source activate web && \
 	pelican --listen --autoreload --relative-urls
