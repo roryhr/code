@@ -68,10 +68,7 @@ def predict(image_file):
 @app.route("/wes_probability/<filename>")
 def wes_probability(filename):
     """Load image and render html result"""
-    if filename in ["wes_image_1.jpg", "grand_budapest_hotel-0136_cropped.jpg"]:
-        filepath = os.path.join("static", filename)
-    else:
-        filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
     score = round(100 * (predict(filepath)))
     result = f"This image is {score}% Wes Anderson"
     return render_template(
