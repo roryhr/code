@@ -1,6 +1,6 @@
-# fly.toml file generated for purple-night-5472 on 2023-03-07T11:13:42-07:00
+# fly.toml file generated for falling-dew-7859 on 2023-03-08T15:45:01-07:00
 
-app = "purple-night-5472"
+app = "falling-dew-7859"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []

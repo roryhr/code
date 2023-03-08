@@ -53,3 +53,5 @@ Needs 1GB of memory to build and run.
 docker build --tag slim-wes .
 docker run --publish 8080:8080 slim-wes
 ```
+
+TensorFlow was using 800MB of memory so I ported this to TensorFlow Lite so I can stay on the free tier of Fly.

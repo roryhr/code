@@ -7,8 +7,10 @@ Access at http://localhost:5000/
 """
 import os
 from pathlib import Path
+import secrets
 
-import tensorflow as tf
+
+from tflite_support.task import vision
 from flask import (
     Flask,
     render_template,
@@ -19,13 +21,15 @@ from flask import (
 )
 from werkzeug.utils import secure_filename
 
-ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".gif"}
+ALLOWED_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 
 
 app = Flask(__name__)
+app.secret_key = secrets.token_hex()
 app.config["UPLOAD_FOLDER"] = "static"
 
-loaded_model = tf.keras.models.load_model("tuned_xception.keras")
+
+classifier = vision.ImageClassifier.create_from_file("model.tflite")
 
 
 def allowed_file(filename):
@@ -54,15 +58,22 @@ def upload_file():
 
 
 def predict(image_file):
-    img = tf.keras.preprocessing.image.load_img(
-        image_file,
-        target_size=(150, 150),
-    )
-    img_array = tf.keras.preprocessing.image.img_to_array(img)
-    img_array = tf.expand_dims(img_array, 0)  # Create batch axis
+    """Reads one sheet of the loaded xlsx
 
-    predictions = loaded_model.predict(img_array)
-    return float(predictions)
+    Parameters
+    ----------
+    image_file : str
+        Image file name
+
+    Returns
+    -------
+    float
+        Value from 0-1 representing the probability it is Wes
+    """
+
+    image = vision.TensorImage.create_from_file(image_file)
+    classification_result = classifier.classify(image)
+    return classification_result.classifications[0].categories[0].score
 
 
 @app.route("/wes_probability/<filename>")
