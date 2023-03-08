@@ -1,5 +1,8 @@
 # How Much Wes
 
+It is live at
+https://falling-dew-7859.fly.dev/
+
 # Getting the data
 
 Download trailers from YouTube.
