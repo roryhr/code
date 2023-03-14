@@ -8,7 +8,7 @@ What's changed?
 
 1. I'm using Firefox. It's fine -- nothing game changing but I like it. 
 
-2. I finally adopted a code formatter -- [Black](https://github.com/psf/black).
+2. I adopted the [Black](https://github.com/psf/black) code formatter.
 At first I was hesitant because I liked to tweak my code formatting but it's a game changer that eliminates a whole class of problems. 
 If you're working on a team I recommend using it.
 

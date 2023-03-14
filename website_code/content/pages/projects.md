@@ -18,6 +18,7 @@ Do you think his unique aesthetic can quantified?
 Well, yes, I did it!
 Check it out.
 
+It was originally on Heroku and now on Fly.
 [How Much Wes?](https://falling-dew-7859.fly.dev/)
 
 The code for it is [here](https://github.com/roryhr/code/tree/master/how_much_wes).
