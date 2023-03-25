@@ -58,7 +58,7 @@ def upload_file():
 
 
 def predict(image_file):
-    """Reads one sheet of the loaded xlsx
+    """Generate an image classification prediction
 
     Parameters
     ----------
