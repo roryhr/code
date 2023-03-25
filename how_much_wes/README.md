@@ -3,6 +3,16 @@
 It is live at
 https://falling-dew-7859.fly.dev/
 
+# Deployment
+
+```
+docker build --tag slim-wes .
+docker run --publish 8080:8080 slim-wes
+flyctl deploy
+```
+
+TensorFlow was using 800MB of memory so I ported this to TensorFlow Lite so I can stay on the free tier of Fly.
+
 # Getting the data
 
 Download trailers from YouTube.
@@ -38,23 +48,14 @@ If `entrypoint` is not defined in app.yaml, App Engine will look for an app
 called `app` in `main.py`.
 
 ```
-conda create -n new_wes python=3.8 keras flask pandas scikit-learn matplotlib h5py pillow requests tensorflow jupyter
+conda create -n new_wes python=3.8
+pip install -r requirements.txt
 
 ```
 
-For tests
+To run the tests
 
 ```
 conda install pytest
+pytest tests
 ```
-
-# Docker
-
-Needs 1GB of memory to build and run.
-
-```
-docker build --tag slim-wes .
-docker run --publish 8080:8080 slim-wes
-```
-
-TensorFlow was using 800MB of memory so I ported this to TensorFlow Lite so I can stay on the free tier of Fly.
