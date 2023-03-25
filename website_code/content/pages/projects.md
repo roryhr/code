@@ -16,9 +16,10 @@ This project was an excuse to learn about CSS, Bootstrap, and Javascript.
 Have you spent hours scrolling through [@accidentallywesanderson](https://www.instagram.com/accidentallywesanderson/) on Instagram? 
 Do you think his unique aesthetic can quantified? 
 Well, yes, I did it!
-Upload an image and check it out.
+Check it out.
 
-[How Much Wes?](https://how-much-wes.herokuapp.com/)
+It was originally on Heroku and now on Fly.
+[How Much Wes?](https://falling-dew-7859.fly.dev/)
 
 The code for it is [here](https://github.com/roryhr/code/tree/master/how_much_wes).
 
@@ -29,14 +30,6 @@ Sometimes I want to analyze a workout so I made a simple web application on Hero
 It's a Flask app that makes a couple of Strava API calls and renders some plots but there's gold in them thar plots!
 
 [running analytics repo](https://github.com/roryhr/running_analytics)
-
-
-# cookiecutter-pyspark
-
-Cookiecutter generates project templates and is a good place to learn best practices. 
-I didn't see a PySpark template so I made one. 
-
-[cookiecutter-pyspark](https://github.com/roryhr/cookiecutter-pyspark)
 
 
 ## Self-driving RC car
@@ -58,7 +51,7 @@ A reinforcement learning-driven hard attention model is ideal. We'll see if I ca
 
 ## Image Classification Networks
 
-* I've invested time studying Convolutional Neural Networks and wrote a Keras model for replicating the results for the current (2015) state of the art [Deep Residual Learning for Image Recognition](http://arxiv.org/abs/1512.03358)
+* I invested time studying Convolutional Neural Networks and wrote a Keras model replicating the results for the 2015 state of the art [Deep Residual Learning for Image Recognition](http://arxiv.org/abs/1512.03358)
  [Residual Network](https://github.com/roryhr/keras_resnet).
 
 
