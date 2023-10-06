@@ -46,7 +46,6 @@ LINKS = [
 SOCIAL = [
     ('Github', 'https://github.com/roryhr'),
     ('LinkedIn', 'https://www.linkedin.com/in/rory-hartong-redden-18334356'),
-    ('Twitter', 'https://twitter.com/rory_h_r'),
 ]
 
 DEFAULT_PAGINATION = 5
