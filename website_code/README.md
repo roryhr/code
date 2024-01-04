@@ -8,6 +8,7 @@ I use the Pelican to generate the html from markdown files.
 Start a local server that watches the `content/` and sends HTML to the `output/` folder. 
 
 ```commandline
+cd website_code
 conda activate  
 make dev
 ```
