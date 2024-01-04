@@ -31,6 +31,6 @@ function onEachFeature(feature, layer) {
 }
 
 xmlhttp.open("GET",
-    url = "https://raw.githubusercontent.com/roryhr/code/master/donut_reviews/output/map_data.json",
+    url = "https://raw.githubusercontent.com/roryhr/code/master/website_code/content/images/donuts/map_data.json",
     async = true);
 xmlhttp.send();
