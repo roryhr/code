@@ -1,6 +1,6 @@
 Title: About
 
-Rory Hartong-Redden is a data scientist and technically a manager in Boulder. 
+Rory Hartong-Redden is a senior data scientist and technical manager based in Boulder. 
 He's worked with lots of data using lots of Python.
 
 # Resume
