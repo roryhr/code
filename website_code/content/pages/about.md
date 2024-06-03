@@ -1,20 +1,23 @@
 Title: About
 
-Rory Hartong-Redden is a senior data scientist and technical manager based in Boulder. 
+Rory Hartong-Redden is a senior data scientist and technical manager in Boulder, Colorado. 
 He's worked with lots of data using lots of Python.
 
+
 # Resume
-
-My resume is lovingly hand-crafted with LaTeX and stored in my [resume](https://github.com/roryhr/resume) repo.
-
 [Resume](https://github.com/roryhr/resume/raw/master/rhartong_redden_resume.pdf)
 
 [CV](https://github.com/roryhr/resume/raw/master/rhartong_redden_cv.pdf)
 
-# Long Bio
+Check out the [repo](https://github.com/roryhr/resume) if you'd like to see LaTeX.
 
+
+# Long Bio
 In early 2020 Rory joined the manufacturing startup [Fast Radius](https://www.fastradius.com/) as a data scientist where he worked in their Chicago office.
-In 2021 Rory moved to Boulder, where he works 100% remotely, and was promoted to manager as the data science team grew.
+In 2021 Rory moved to Boulder, where he works 100% remotely, and was promoted to manager as the data science team grew. 
+Fast Radius would go on to a [SPAC IPO](https://www.nasdaq.com/press-release/fast-radius-announces-completion-of-merger-with-ecp-environmental-growth) on February 7, 2022.
+Just 8 months later the company declared [bankrupcy](https://www.nasdaq.com/press-release/fast-radius-commences-chapter-11-to-complete-its-marketing-and-sale-process-2022-11). 
+The remains of Fast Radius were bought at auction by a private equity firm and incorporated into a newly-formed company called SyBridge.
 
 
 In 2018 Rory decided to move from Silicon Valley to Linz, Austria to work at [runtastic](https://www.runtastic.com/). 
