@@ -1,10 +1,9 @@
-# How Much Wes
+# How much Wes Anderson?
 
-It is live at
+It is live on Fly.io <br>
 https://falling-dew-7859.fly.dev/
 
 # Deployment
-
 ```
 docker build --tag slim-wes .
 docker run --publish 8080:8080 slim-wes
@@ -12,6 +11,28 @@ flyctl deploy
 ```
 
 TensorFlow was using 800MB of memory so I ported this to TensorFlow Lite so I can stay on the free tier of Fly.
+
+# Local Setup 
+```
+conda create -n py38 python=3.8
+pip install -r requirements.txt
+
+
+conda activate py38
+flask --app main --debug run
+```
+
+Access at <br>
+http://localhost:5000/
+
+
+
+To run the tests
+```
+conda install pytest
+pytest tests
+```
+
 
 # Getting the data
 
@@ -39,23 +60,3 @@ Use ffmpeg to convert movies to images
 
 Model training follows the Keras example of training a binary model on very little data
 https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
-
-# Google App Engine Notes
-
-Original runtime is Python 3.6. The minimum runtime App Engine accepts is 3.7.
-
-If `entrypoint` is not defined in app.yaml, App Engine will look for an app
-called `app` in `main.py`.
-
-```
-conda create -n new_wes python=3.8
-pip install -r requirements.txt
-
-```
-
-To run the tests
-
-```
-conda install pytest
-pytest tests
-```
