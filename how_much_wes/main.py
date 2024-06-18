@@ -4,6 +4,9 @@ Run it locally:
 $ flask --app main --debug run
 
 Access at http://localhost:5000/
+
+TensorFlow was using 800MB of memory so I ported this to TensorFlow Lite 
+to stay on the free tier of Fly.
 """
 import os
 from pathlib import Path
