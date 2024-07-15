@@ -42,6 +42,8 @@ LINKS = [
     ("MultiThreaded", "http://multithreaded.stitchfix.com/"),
     ("SISL", "http://sisl.stanford.edu/"),
     ("Advent of Code", "https://adventofcode.com/"),
+    ("Simon Willison’s Weblog", "https://simonwillison.net/"),
+
 ]
 
 # Social widget

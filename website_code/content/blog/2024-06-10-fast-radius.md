@@ -1,14 +1,33 @@
-Title: The story of Fast Radius
-Date: 2024-06-10
+Title: Part One: The story of Fast Radius
+Date: 2024-07-12
 Tags: business
 
-# Fast Radius 
+
+Founded in 2015, Fast Radius went public through a SPAC on February 7, 2022 trading as FSRD on the Nasdaq.
+Just nine months later it declared bankruptcy.
+What happened?
+
+This is my attempt to tell the story from my perspective and untangle a bit of the mess. This isn’t a particularly interesting case study but I happened to be there so there you go.
+
+## The Beginning 
+
+On a sunny day in December 2019 I was skiing at Palisades Tahoe with a friend when I checked my email on the chairlift.
+In my inbox was a subject that made my day: “Welcome to Fast Radius!”. 
+
+The letter outlined my salary, annual bonus, and – new to me – 7,500 stock options. I previously worked at established companies that didn’t offer stock options but I understood the idea. At employee 50 I could be like the early Amazon or Microsoft employee who got rich because they owned a sliver of the company.
+
+On the other hand, I knew most startups failed – and only two became Microsoft or Amazon – so the most likely value of my options was nothing. The cash compensation was enough for me so I didn’t negotiate for more stock options.
+
+I recently read “Barbarians at the Gate” and it has spurred an interest in finance and motivated a look back at my time and a closer look at the SEC filings. The characters and writing here aren’t nearly as good.
 
 
-Founded in 2017, Fast Radius went public via though a SPAC on February 7, 2022. By November 7, 2022 Fast Radius [declared](https://www.sec.gov/ix?doc=/Archives/edgar/data/0001832351/000095017022022842/fsrd-20221104.htm) bankruptcy. What happened? 
+## Fast Radius
+![3D Systems Stock Price.png](..%2Fimages%2F3D%20Systems%20Stock%20Price.png)
+
+After a previous hype cycle in 2013-2014, 3D printing was back in headlines in 2019 and interest was brewing with pundits saying it would revolutionize manufacturing. 
 
 
-From [Built in Chicago](https://www.builtinchicago.org/articles/fast-radius-raises-48m) on Apr. 02, 2019
+An article from [Built in Chicago](https://www.builtinchicago.org/articles/fast-radius-raises-48m) on Apr. 02, 2019 sets the scene:
 
 > Fast Radius Raises $48M, With Plans to Double Its Team
 > 
@@ -22,105 +41,94 @@ From [Built in Chicago](https://www.builtinchicago.org/articles/fast-radius-rais
 >
 > Founded in 2015, Fast Radius builds industrial-grade components — think airplane parts, medical equipment and custom car parts — using additive manufacturing, or 3D printing.
 
-...
-> The technology would also allow airlines and manufacturing companies to print one-off components as needed, as opposed to keeping every machine part that could possibly break in stock. According to McCusker, that would free up billions of dollars invested in components stored around the world.
->
-> Logistics titan UPS led Tuesday’s round, in which Drive Capital also participated. Previous investors Jump Capital, Skydeck and Hyde Park Venture Partners partook in Fast Radius’ Series B as well.
+
+I was hired as part of that headcount growth. Nice!
+
+
+## Growth
+Despite the COVID-19 pandemic, 2020 and 2021 were exciting. 
+Growth is exciting.
+As software people we didn't want to go into the office anyway, so it wasn't too bad to work remotely. 
+
+It wasn’t WeWork lavish but the company was spending money: hiring, new office space in the Loop, new factory space on Goose Island (a former Infiniti dealership), new CNC machines. As a data scientist, I was pushed into management to grow the team – so now became “Mr. Manager” (it’s just manager).
+
+On Jan. 24, 2022 the company opened an office in a fancy banking space in downtown Chicago at 33 N. Lasalle St. where visitors “must wear a mask at all times unless actively eating/drinking”. 
+Like our time in the Nasdaq – it didn’t last long – and I only visited the office once or twice. 
+
+
+## SPAC
+On July 19, 2021 our CEO Lou Rassey sent out an email concurrent with a public press release: 
+
+> Exciting news for our company
 > 
-> In addition to investing in Fast Radius, UPS has also partnered with the company to build a manufacturing facility at its WorldPort hub in Louisville, KY. The new facility would allow Fast Radius to build and ship parts much faster than it can now. 
+> I’m writing to share some exciting news about our company. 
+> Earlier today, we announced that Fast Radius will become a publicly-listed company through a merger with ECP Environmental Growth Opportunities Corp. (ECP), a publicly traded special purpose acquisition vehicle (SPAC). 
+> 
+> Best,
+> Lou
 
+It sounded amazing with eye-popping numbers: a $1.4 billion valuation, $100 million private investment, $345 million from the trust fund account.
+Amidst all these numbers the $35 million in transaction expenses seemed reasonable.
+Plus, my stock options suddenly became more concrete. 
 
-![Screen Shot 2024-06-10 at 3.49.41 PM.png](..%2Fimages%2FScreen%20Shot%202024-06-10%20at%203.49.41%20PM.png)
+Fast-forward to February 4, 2022: 
+> First, today is an exciting day as we successfully completed our business combination with ENNV! 
+> This means that our first day of public trading will be Monday, February 7th, and we will officially be listed on the Nasdaq under the ticker symbol ‘FSRD.’ On Wednesday, February 16th, we will ring the closing bell on Nasdaq in New York City.
+> 
+> Third, I want to quickly reflect on the outcomes of our SPAC process. 
+> As we’ve discussed, we are in a turbulent market, the SPAC process has drawn some scrutiny, and as a result, many SPACs have experienced high redemption rates. We were not immune to this trend—we saw high redemptions from ENNV shareholders.
+>  
+> Onward, 
+> Lou
 
-## Summary 
-
-The document "Form S-1" is a prospectus for Fast Radius, Inc., which details their business model, financial status, and other relevant information for potential investors. Here's a summary of the key points:
-Company Overview
-
-    Fast Radius, Inc. is a leading cloud manufacturing and digital supply chain company.
-    Headquarters: Chicago, with additional offices in Atlanta, Louisville, and Singapore.
-    Microfactories: Located in Chicago and at the UPS Worldport facility in Louisville, Kentucky.
-    Employees: Approximately 240 full-time employees.
-
-Business Model
-
-    Cloud Manufacturing Platform: Combines physical infrastructure (microfactories and third-party supplier factories) with a proprietary digital infrastructure software layer.
-    Manufacturing Technologies: Includes additive manufacturing (3D printing), CNC machining, injection molding, sheet metal, urethane casting, and other methods.
-    Customer Base: Serves over 2,900 customers across various industries, including over 45 of the Fortune 500 companies.
-    Production Output: Produced over 15 million parts and evaluated over 155,000 unique designs since 2017.
-
-Mission and Vision
-
-    Mission: To make new things possible and advance the state of the world through innovative manufacturing and supply chain solutions.
-    Vision: To build a new infrastructure for designing, making, and moving physical products in the digital age, addressing the inefficiencies of traditional global supply chains.
-
-Financial Information
-
-    The document includes detailed financial statements and discusses the company's historical financial performance and future outlook.
-    Risk Factors: Various risks associated with the business and market conditions are detailed, which potential investors should consider.
-
-This summary provides an overview of Fast Radius, Inc.'s operations, goals, and financial aspects as presented in their Form S-1 prospectus.
+The redemption rate certainly was 91% so the capital from the trust fund was $29.6 million instead of the hoped-for $345 million. 
+The PIPE was $75 million instead of $100 million (someone dropped out). Transaction fees eclipsed the trust fund account. 
 
 
 
-
-ChatGPT
-Financial Summary from Form S-1:
-
-    Revenue:
-        Total revenue for the fiscal year ended December 31, 2023, was $3,878, an increase from $2,928 in 2022, and $1,894 in 2021.
-        The majority of revenue comes from the sale of products, followed by services.
-
-    Cost of Revenue:
-        Cost of revenue for 2023 was $1,704, up from $1,348 in 2022 and $977 in 2021.
-        The increase corresponds with the rise in total revenue.
-
-    Gross Profit:
-        Gross profit for 2023 was $2,174, compared to $1,580 in 2022, and $917 in 2021.
-        Gross margin remained relatively stable, with a slight increase reflecting efficiency improvements.
-
-    Operating Expenses:
-        Total operating expenses for 2023 were $22,167, up from $15,069 in 2022 and $7,074 in 2021.
-        Significant expenses included research and development, sales and marketing, and general administrative costs.
-
-    Net Loss:
-        The net loss for 2023 was $22,187, compared to $15,105 in 2022, and $7,082 in 2021.
-        The increasing net loss reflects higher operating expenses despite rising revenues.
-
-    Balance Sheet Highlights:
-        Cash and cash equivalents stood at $3,122 at the end of 2023, down from $5,894 at the end of 2022.
-        Total assets at the end of 2023 were $20,505, compared to $15,711 in 2022.
-        Total liabilities at the end of 2023 were $14,762, up from $11,543 in 2022.
-        Shareholders' equity was $5,743 at the end of 2023, up from $4,168 in 2022.
-
-    Cash Flow:
-        Net cash used in operating activities for 2023 was $18,051, compared to $12,738 in 2022.
-        Net cash used in investing activities for 2023 was $1,542, down from $2,870 in 2022.
-        Net cash provided by financing activities for 2023 was $16,821, up from $16,620 in 2022.
-
-Overall, the financials indicate that while the company is growing its revenue, it is also incurring increasing losses due to rising operating expenses. The balance sheet shows a strong asset base, but the company is heavily reliant on financing activities to support its cash flow needs.
+![SPAC IPOs.png](..%2Fimages%2FSPAC%20IPOs.png)
 
 
-In the "Summary Risk Factors" section from the ENNV proposal 
-https://www.sec.gov/Archives/edgar/data/1832351/000119312521295624/d182329ds4a.htm
+Fast Radius in 2022 was part of the cohort that killed SPACs.
+
+## Failure
+![Legacy FSRD Stock Price.png](..%2Fimages%2FLegacy%20FSRD%20Stock%20Price.png)
 
 
-> Fast Radius may require additional capital to support business growth, and this capital might not be available on acceptable terms, if at all. If Fast Radius fails to obtain additional capital on terms that are acceptable, it may not be able to implement such plans for business growth fully, if at all.   	
-
-> Without obtaining adequate capital funding or improving its financial performance, Fast Radius may not be able to continue as a going concern.
- 	  	
-
-If demand for Fast Radius’ solutions does not grow as expected, or if market adoption of advanced manufacturing and Fast Radius’ Cloud Manufacturing Platform does not continue to develop, or develops more slowly than expected, Fast Radius’ revenues may stagnate or decline, and its business may be adversely affected. 
+The stock price started at $10 and dropped quickly. By the time my six-month lockout period ended the stock price was below my option price. 
 
 
-# Leadership was incentivized to get the deal done
+The end was announced on Nov 7, 2022: 
 
+> Corporate update
+> 
+> Team,
+>
+> This evening, we announced that Fast Radius filed for protection under Chapter 11 of the U.S. Bankruptcy Code. Now that we have filed, we are working closely with our partners to facilitate a capitalization or potential sale of our business. 
+> 
+> ...
+>
+> Albeit in a challenging and unfamiliar time, I ask each of you to continue to be mindful of our shared purpose to Make New Things Possible everyday. 
+> 
+> Onward, 
+>
+> Lou
 
-https://www.sec.gov/ix?doc=/Archives/edgar/data/0001832351/000119312522034631/d286122d8k.htm
+Old habits die hard and Lou signed off with his usual “Onward”. The company was bought at the bankruptcy auction a week later for just $15.9 million and he was replaced as part of the deal.
 
-January 16, 2022 (the “Amendment Effective Date”), Fast Radius and Lou Rassey entered into an amendment: 
-> would receive (i) a one-time cash bonus equal to $335,000 to be paid within five (5) business days following the Amendment Effective Date and (ii) a one-time cash bonus equal to $2,065,000 to be paid within thirty (30) days following the closing of an initial public offering or transaction with a special purpose acquisition company.
+Looking back, the decision to do a SPAC was the wrong one for Fast Radius. The company was late to 3D printing, late to SPAC, and late to regroup. Why was the deal done? As I learned in Barbarians, transaction fees power Wall Street – everyone wanted to get a deal done to get paid.
 
-On the Amendment Effective Date, Fast Radius and Pat McCusker entered into an amendment to Mr. McCusker’s employment agreement (the “McCusker Amendment Agreement”), to provide that instead of a $525,000 one-time cash bonus payable immediately prior to the consummation of an initial public offering or transaction with a special purpose acquisition company, Mr. McCusker would receive (i) a one-time cash bonus equal to $70,000 to be paid within five (5) business days following the Amendment Effective Date and (ii) a one-time cash bonus equal to $455,000 to be paid within thirty (30) days following the closing of an initial public offering or transaction with a special purpose acquisition company.
+The holding company got its fee regardless of redemptions. Fast Radius leadership were awarded bonuses too: Lou got $2.4 million for closing the deal. 
 
-The foregoing description of the Rassey Amendment Agreement and the McCusker Amendment Agreement and the transactions contemplated thereby is not complete and is subject to, and qualified in its entirety by reference to the text of the Rassey Amendment Agreement and the McCusker Amendment Agreement, copies of which are included as Exhibits 10.13 and 10.14, respectively, to this Current Report on Form 8-K. 
+## Conclusion
+The FSRD ticker is gone, you won’t find it on Google Finance, [Energy Capital Partners](https://www.ecpgp.com/) has scrubbed all references to Fast Radius and we all move on. 
+You kind of wonder at the end of the day what the point was.
+Fast Radius was public for nine months.
+
+If you go back to the old Steve Martin quote, “Be so good they can’t ignore you.” 
+The converse is also true, so I suppose it’s fitting that Fast Radius is forgotten and ignored. 
+Goldman Sachs and Palantir losses paid my salary though so that’s not too bad.
+
+Despite an IPO, my naive assumption that most startups fail and the options wouldn't be worth anything turned out to be correct.
+Now that I’m wrapping this all up you may be wondering when I'm going to answer the original question, “Why did Fast Radius fail?”. 
+That's getting punted: part two will dive into the details and financial documents.

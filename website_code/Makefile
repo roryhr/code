@@ -1,6 +1,5 @@
 # start server on http://localhost:8000/
 dev:
-	source activate web && \
 	pelican --listen --autoreload --relative-urls
 
 clean:
