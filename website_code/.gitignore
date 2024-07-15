@@ -8,3 +8,5 @@ __pycache__/
 
 # Output HTML dir
 output
+
+.idea
