@@ -130,3 +130,21 @@ Goldman Sachs and Palantir losses paid my salary though so that’s not too bad.
 Despite an IPO, my naive assumption that most startups fail and the options wouldn't be worth anything turned out to be correct.
 Now that I’m wrapping this all up you may be wondering when I'm going to answer the original question, “Why did Fast Radius fail?”. 
 That's getting punted: part two will dive into the details and financial documents.
+
+
+## References and Links
+
+[Fast Radius Announces Completion of Merger with ECP Environmental Growth Opportunities Corp.](https://news.thomasnet.com/companystory/fast-radius-announces-completion-of-merger-with-ecp-environmental-growth-opportunities-corp-40045944)
+
+[Despite Slowdown in SPAC Activity, Opportunities Remain | Insights](https://www.skadden.com/insights/publications/2022/09/quarterly-insights/despite-slowdown-in-spac-activity-opportunities-remain)
+
+Bar chart of SPAC IPOs
+[The State of the SPAC Market - Russell Investments - Commentaries - Advisor Perspectives](https://www.advisorperspectives.com/commentaries/2023/05/01/the-state-of-the-spac-market)
+
+A quick recap outlining how Fast Radius failed so quickly:
+
+[Dashed Dreams: What Happened to Fast Radius? - Engineering.com](https://www.engineering.com/dashed-dreams-what-happened-to-fast-radius/)
+
+[SyBridge Technologies to Acquire Certain Assets of Fast Radius](https://sybridge.com/sybridge-to-acquire-certain-assets-of-fast-radius/)
+
+[Digital Manufacturing Company Fast Radius Goes Public with $1.4B SPAC Agreement - 3DPrint.com](https://3dprint.com/283406/digital-manufacturing-company-fast-radius-goes-public-with-1-4b-spac-agreement/)
