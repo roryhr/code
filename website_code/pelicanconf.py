@@ -49,7 +49,7 @@ LINKS = [
 # Social widget
 SOCIAL = [
     ("Github", "https://github.com/roryhr"),
-    ("LinkedIn", "https://www.linkedin.com/in/rory-hartong-redden-18334356"),
+    ("LinkedIn", "https://www.linkedin.com/in/rory-hartong-redden"),
 ]
 
 DEFAULT_PAGINATION = 5

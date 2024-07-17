@@ -22,7 +22,7 @@ I recently read “Barbarians at the Gate” and it has spurred an interest in f
 
 
 ## Fast Radius
-![3D Systems Stock Price.png](..%2Fimages%2F3D%20Systems%20Stock%20Price.png)
+![3D Systems Stock Price.png]({static}/images/3D Systems Stock Price.png)
 
 After a previous hype cycle in 2013-2014, 3D printing was back in headlines in 2019 and interest was brewing with pundits saying it would revolutionize manufacturing. 
 
@@ -85,14 +85,12 @@ The redemption rate certainly was 91% so the capital from the trust fund was $29
 The PIPE was $75 million instead of $100 million (someone dropped out). Transaction fees eclipsed the trust fund account. 
 
 
-
-![SPAC IPOs.png](..%2Fimages%2FSPAC%20IPOs.png)
-
+![SPAC IPOs.png]({static}/images/SPAC IPOs.png)
 
 Fast Radius in 2022 was part of the cohort that killed SPACs.
 
 ## Failure
-![Legacy FSRD Stock Price.png](..%2Fimages%2FLegacy%20FSRD%20Stock%20Price.png)
+![Legacy FSRD Stock Price.png]({static}/images/Legacy FSRD Stock Price.png)
 
 
 The stock price started at $10 and dropped quickly. By the time my six-month lockout period ended the stock price was below my option price. 
