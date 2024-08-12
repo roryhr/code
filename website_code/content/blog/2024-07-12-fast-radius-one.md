@@ -1,4 +1,4 @@
-Title: Part One: The story of Fast Radius
+Title: Part One: What happened to Fast Radius?
 Date: 2024-07-12
 Tags: business
 
