@@ -146,12 +146,11 @@ Manufacturing is a traditional industry and people like relationships so most of
 
 Table 3: Employee count from public news and SEC filings.
 
-
 General and administrative expenses increased 396% from $7.7 million to $38.2 million for the three months ended March 31, 2022 compared to the prior-year period. 
 These ballooning expenses include $17.5M in stock-based compensation (primarily to the CEO), $9.9M for Palantir (repaying their $45M loan and “using” their software).
 
 Sidebar: what was Palantir doing? 
-They were desperate to report SaaS recurring revenue that they loaned startups money which was paid back through software fees. 
+They were so desperate to report SaaS recurring revenue that they loaned startups money which was paid back through software fees. 
 Fast Radius tried and failed to shoehorn the Palantir software in somewhere. 
 It didn't work out well for Palantir. 
 
@@ -193,7 +192,7 @@ The value proposition is hardly mentioned and it eschewed the traditional method
 > Discord grew out of the team wanting to have a convenient, feature-rich way to talk to their friends while gaming, and like almost every success story it grew slowly through making itself perfect for many, many niche communities.
 > Its growth was natural, because it took all the things that you’d want from a platform and built it sustainably. 
 
-Growing slowing out of a niche product-market fit wasn't the route Fast Radius went. 
+Growing slowly out of a niche product-market fit wasn't the route Fast Radius went. 
 Reading the deck you don’t get a sense of who this is for, everything is generic and broad.
 The theme of the deck is buzzwords and trends.
 Like how VCs tried to make Clubhouse a thing, Fast Radius tried to make Cloud Manufacturing a thing through force of will.
