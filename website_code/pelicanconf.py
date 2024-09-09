@@ -6,7 +6,7 @@ SITEURL = "http://roryhr.com"
 INDEX_SAVE_AS = "articles.html"
 
 THEME = "themes/notmyidea"
-
+ANALYTICS = """<script defer src="https://cloud.umami.is/script.js" data-website-id="a1db9ef4-135a-4406-8304-f1ffa50665bc"></script>"""
 # TEMPLATE_PAGES = {'images/donuts.html': '/pages/donuts.html'}
 
 DISPLAY_PAGES_ON_MENU = False
@@ -14,7 +14,7 @@ DISPLAY_CATEGORIES_ON_MENU = False
 
 MENUITEMS = [
     ("Home", "/"),
-    ("Articles", "/articles"),
+    ("Articles", "/archives"),
     ("About", "/pages/about"),
     ("Projects", "/pages/projects"),
     ("Contact", "/pages/contact"),

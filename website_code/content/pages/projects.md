@@ -3,6 +3,14 @@ Title: Projects
 As I write more posts about what I'm working on (or finished, let's say) I'll
 link to them here.
 
+# Strava Deck
+I like to add creative titles to my Strava activities but creativity comes in bursts, so I 
+created a website to store activity names and update "Afternoon Run" to something else when I upload a run.
+This was a fun excuse to practice Django.
+It only works for me -- but it does work! 
+
+[Strava Deck site](https://strava-deck.fly.dev/) and [code](https://github.com/roryhr/strava-deck/). 
+
 # Donut Reviews
 
 Since 2014 I've been adding to a personal Facebook album called "Donut Selfies". 
@@ -22,6 +30,8 @@ It was originally on Heroku and now on Fly.
 [How Much Wes?](https://falling-dew-7859.fly.dev/)
 
 The code for it is [here](https://github.com/roryhr/code/tree/master/how_much_wes).
+
+
 
 # Running Analysis 
 
