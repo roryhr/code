@@ -43,13 +43,13 @@ LINKS = [
     ("SISL", "http://sisl.stanford.edu/"),
     ("Advent of Code", "https://adventofcode.com/"),
     ("Simon Willison’s Weblog", "https://simonwillison.net/"),
-
 ]
 
 # Social widget
 SOCIAL = [
     ("Github", "https://github.com/roryhr"),
     ("LinkedIn", "https://www.linkedin.com/in/rory-hartong-redden"),
+    ("Mastodon", "https://mastodon.social/@roryhr"),
 ]
 
 DEFAULT_PAGINATION = 5

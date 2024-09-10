@@ -1,6 +1,6 @@
 # start server on http://localhost:8000/
 dev:
-	pelican --listen --autoreload --relative-urls
+	source activate py39 && pelican --listen --autoreload --relative-urls
 
 clean:
 	./develop_server.sh stop && \

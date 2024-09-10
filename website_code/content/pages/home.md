@@ -12,3 +12,5 @@ Here are some recommended blog posts
 
 
 -- Rory Hartong-Redden
+
+<a rel="me" href="https://mastodon.social/@roryhr"></a>
