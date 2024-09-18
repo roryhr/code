@@ -1,11 +1,10 @@
 # Website Code
 
-Here's the code and content for my static website hosted on Github. 
-I use the Pelican to generate HTML from the markdown files. 
+Here's the code and markdown for my static website hosted on GitHub. 
+I use the [Pelican](https://getpelican.com/) static site generator to make HTML from the markdown files. 
 
 ## Quick Start
-
-Start a local server that watches the `content/` and sends HTML to the `output/` folder. 
+Start a local server that watches the `content/` folder and sends HTML to the `output/` folder. 
 
 ```commandline
 conda activate py39 
@@ -16,5 +15,4 @@ make dev
 Browse at http://localhost:8000/
 
 
-The output HTML is another Github repo
-https://github.com/roryhr/roryhr.github.io
+The website is hosted from another GitHub [repo](https://github.com/roryhr/roryhr.github.io).

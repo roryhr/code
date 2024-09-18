@@ -7,7 +7,7 @@ clean:
 	rm -rf __pycache__/
 
 publish:
-	source activate web && \
+	source activate py39 && \
 	pelican && \
 	cd output/ && \
 	git add -A && \

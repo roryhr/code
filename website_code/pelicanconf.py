@@ -6,7 +6,10 @@ SITEURL = "http://roryhr.com"
 INDEX_SAVE_AS = "articles.html"
 
 THEME = "themes/notmyidea"
+
+# Comment out ANALYTICS during local development
 ANALYTICS = """<script defer src="https://cloud.umami.is/script.js" data-website-id="a1db9ef4-135a-4406-8304-f1ffa50665bc"></script>"""
+
 # TEMPLATE_PAGES = {'images/donuts.html': '/pages/donuts.html'}
 
 DISPLAY_PAGES_ON_MENU = False
@@ -39,7 +42,7 @@ LINKS = [
     ("SF Python", "http://sfpythonmeetup.com/"),
     ("No Free Hunch (Kaggle)", "http://blog.kaggle.com/"),
     ("EFAVDB", "http://efavdb.com/"),
-    ("MultiThreaded", "http://multithreaded.stitchfix.com/"),
+    ("Where's Your Ed At", "https://www.wheresyoured.at/"),
     ("SISL", "http://sisl.stanford.edu/"),
     ("Advent of Code", "https://adventofcode.com/"),
     ("Simon Willison’s Weblog", "https://simonwillison.net/"),
