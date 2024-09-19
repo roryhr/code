@@ -6,11 +6,14 @@ Updated: 2022-12-12
 
 Added a `requirements.txt` to capture dependencies and ported to MacOS. 
 
+Updated: 2024-09-19
+entry-point is the Makefile 
+
 # Introduction
 
 After 9 months I'm returning to this website.
 My first question was "How does this thing work?"
-Of course I didn't document it and I don't remember. Lesson learned.
+Of course, I didn't document it and I don't remember. Lesson learned.
 
 **The things we take for granted are the most important to document.**
 
@@ -20,10 +23,10 @@ This post is for myself and anyone interested in using Pelican to make a Github-
 
 ## High level overview
 
-This site is hosted for free by [Github](https://github.com/) from the special repository [roryhr/roryhr.github.io](https://github.com/roryhr/roryhr.github.io). 
-Thanks Github!
+This site is hosted for free by [GitHub](https://github.com/) from the special repository [roryhr/roryhr.github.io](https://github.com/roryhr/roryhr.github.io). 
+Thanks, GitHub!
 
-I used a static site generator called Pelican that generates html, which comprises this website, from markdown text files in a particular directory structure (more on that in a bit).
+I used a static site generator called Pelican that generates html, which comprises this website, from Markdown text files in a particular directory structure (more on that in a bit).
 These files are in a separate repository at
 [roryhr/code/website_cost](https://github.com/roryhr/code/tree/master/website_code).
 
@@ -33,7 +36,7 @@ Content for the website goes in the `content` directory.
 Generate the website
 
 	:::bash
-	(web) ~/p/website_code> pelican content
+	(py39) ~/p/website_code> pelican content
 	Done: Processed 13 articles, 0 drafts, 4 pages, 0 hidden pages and 0 draft pages in 0.85 seconds.
 
 The output html goes to the `output` directory which gets pushed to `roryhr.github.io` repo.
@@ -64,20 +67,23 @@ The output html goes to the `output` directory which gets pushed to `roryhr.gith
 
 ### Development
 
-In `pelicanconf.py` enable relative URLs by setting `RELATIVE_URLS=True`.
+In `pelicanconf.py` enable relative URLs by setting `RELATIVE_URLS=True` and comment out `ANALYTICS`. 
+Neither are necessary.
 
-Run the development server manually and navigate to `http://localhost:8000`
+Take advantage of Pelican script to recompile the site as you edit it (very cool!).
 
-	:::bash
-	((blog)) rory@rory-Satellite-S75-B:~/Projects/site-code$ cd output/
-	((blog)) rory@rory-Satellite-S75-B:~/Projects/site-code/output$ python -m pelican.server
-
-Alternatively, take advantage of Pelican script that recompiles the site as you edit it (very cool!)
-
+Across my various projects I like to have a consistent make entrypoint because remembering the particulars of Pelican, Flask, Django across different versions is hard.
 ```bash
-(web) ~/p/website_code> ./develop_server.sh start
-(web) ~/p/website_code> ./develop_server.sh stop
+(py39) ~/p/website_code> make dev
 ```
+In this case that command is 
+
+```commandline
+source activate py39 && pelican --listen --autoreload --relative-urls
+```
+
+Navigate to `http://localhost:8000`
+
 
 # Repository contents
 
@@ -98,8 +104,6 @@ Alternatively, take advantage of Pelican script that recompiles the site as you 
 		output/
 			index.html
 			lots of other html files
-		render_math/
-		develop_server.sh  
 		LICENSE
 		pelicanconf.py  
 		README.md
