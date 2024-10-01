@@ -1,15 +1,14 @@
 Title: About
 
-Rory Hartong-Redden is a senior data scientist in Boulder, Colorado. 
+Rory Hartong-Redden is a data scientist and machine learning engineer in Boulder, Colorado. 
 He's worked with all kinds of data leveraging his background in physics and engineering.  
-More importantly, he gets stuff done by building and deploying machine learning models.
 
 # Resume
 [Resume](https://github.com/roryhr/resume/raw/master/rhartong_redden_resume.pdf)
 
 [CV](https://github.com/roryhr/resume/raw/master/rhartong_redden_cv.pdf)
 
-Check out the [repo](https://github.com/roryhr/resume) if you'd like to see LaTeX.
+Check out the [GitHub repo](https://github.com/roryhr/resume) if you'd like to see LaTeX (a holdover from my time in academia).
 
 
 # Long Bio
