@@ -2,7 +2,7 @@ Title: Welcome
 URL:
 save_as: index.html
 
-Thanks for stopping by my website. 
+Thanks for stopping by my corner of the internet. 
 Here you'll find information about me, stuff I've done, and stuff I've written. 
 Enjoy!
 
@@ -16,6 +16,3 @@ Here are some recommended blog posts
 
 
 -- Rory Hartong-Redden
-
-[//]: # (This doesn't seem to be working )
-[//]: # (<a rel="me" href="https://mastodon.social/@roryhr"></a>)

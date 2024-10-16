@@ -45,7 +45,7 @@ LINKS = [
     ("Where's Your Ed At", "https://www.wheresyoured.at/"),
     ("SISL", "http://sisl.stanford.edu/"),
     ("Advent of Code", "https://adventofcode.com/"),
-    ("Simon Willison’s Weblog", "https://simonwillison.net/"),
+    ("Simon Willison's Weblog", "https://simonwillison.net/"),
 ]
 
 # Social widget
