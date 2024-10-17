@@ -1,1 +1,2 @@
 pelican==4.9.1
+pelican-sitemap==1.1.0

@@ -1,7 +1,7 @@
 AUTHOR = "Rory Hartong-Redden"
 SITENAME = "Rory's Corner"
 
-SITEURL = "http://roryhr.com"
+SITEURL = "https://roryhr.com"
 
 INDEX_SAVE_AS = "articles.html"
 
@@ -66,3 +66,17 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+SITEMAP = {
+    "format": "xml",
+    "priorities": {
+        "articles": 0.5,
+        "indexes": 0.5,
+        "pages": 0.5
+    },
+    "changefreqs": {
+        "articles": "monthly",
+        "indexes": "daily",
+        "pages": "monthly"
+    }
+}

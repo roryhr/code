@@ -2,10 +2,6 @@
 dev:
 	source activate py39 && pelican --listen --autoreload --relative-urls
 
-clean:
-	./develop_server.sh stop && \
-	rm -rf __pycache__/
-
 publish:
 	source activate py39 && \
 	pelican && \
