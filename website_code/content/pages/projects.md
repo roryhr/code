@@ -20,13 +20,14 @@ This project was an excuse to learn about CSS, Bootstrap, and Javascript.
 # How Much Wes Anderson?
 Have you spent hours scrolling through [@accidentallywesanderson](https://www.instagram.com/accidentallywesanderson/) on Instagram? 
 Do you think his unique aesthetic can quantified? 
-Well, yes, I did it!
+
+Of course it can and I did it! (I'm joking, to be clear -- he's great.)
 Check it out.
 
-It was originally on Heroku and now on Fly.
+It was originally on Heroku and now on Flyio.
 [How Much Wes?](https://falling-dew-7859.fly.dev/)
 
-The code for it is [here](https://github.com/roryhr/code/tree/master/how_much_wes).
+The code for it is [here](https://github.com/roryhr/how-much-wes).
 
 
 # Image Classification Networks

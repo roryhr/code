@@ -1,7 +1,7 @@
 AUTHOR = "Rory Hartong-Redden"
 SITENAME = "Rory's Corner"
 
-SITEURL = "https://roryhr.com"
+SITEURL = "https://www.roryhr.com"
 
 INDEX_SAVE_AS = "articles.html"
 
@@ -58,7 +58,7 @@ SOCIAL = [
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+RELATIVE_URLS = False
 
 # Turn off Feed generation
 FEED_ALL_ATOM = None
@@ -69,14 +69,6 @@ AUTHOR_FEED_RSS = None
 
 SITEMAP = {
     "format": "xml",
-    "priorities": {
-        "articles": 0.5,
-        "indexes": 0.5,
-        "pages": 0.5
-    },
-    "changefreqs": {
-        "articles": "monthly",
-        "indexes": "daily",
-        "pages": "monthly"
-    }
+    "priorities": {"articles": 0.5, "indexes": 0.5, "pages": 0.5},
+    "changefreqs": {"articles": "monthly", "indexes": "daily", "pages": "monthly"},
 }
